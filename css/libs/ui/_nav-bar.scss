@@ -1,0 +1,16 @@
+/***********
+ * NAV BAR
+ ***********/
+
+/**
+ * 1. Make site-nav stick on top at all time
+ * 2. Stretch the container to 100% Screensize
+ **/
+
+.nav-bar{
+  position: fixed; /* [1] */
+  height: $nav-bar-height;
+  width: 100%; /* [2] */
+
+  background: $lightYellow;
+}

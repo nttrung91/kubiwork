@@ -147,5 +147,20 @@ $half-spacing-unit: $base-spacing-unit / 2!default;
 
 $use-nav: true;
 
-/* Kubi Variable */
+/*
+ * ===========================
+ * UI Variables
+ * ===========================
+ */
 
+// Theme Color
+$theme-color: $blue;
+
+// nav-bar
+$nav-bar-height: 55px;
+
+// menu-link
+$menu-link-size: $nav-bar-height;
+
+// badge
+$badge-size: $nav-bar-height;

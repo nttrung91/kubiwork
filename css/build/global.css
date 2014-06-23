@@ -1,7 +1,3 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* ==========================================================================
   Compass prefix support
   ========================================================================== */
@@ -55,7 +51,15 @@
  * ===========================
  */
 /* navigator */
-/* Kubi Variable */
+/*
+ * ===========================
+ * UI Variables
+ * ===========================
+ */
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /**
  * We are using most of Normalize CSS with these modifications:
  *
@@ -1735,4 +1739,118 @@ table h1, table h2, table h3, table h4, table h5, table h6, table p, table ul, t
 /* fontawesome */
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
+}
+
+/* Page UI Components */
+/***********
+ * NAV BAR
+ ***********/
+/**
+ * 1. Make site-nav stick on top at all time
+ * 2. Stretch the container to 100% Screensize
+ **/
+.nav-bar {
+  position: fixed;
+  /* [1] */
+  height: 55px;
+  width: 100%;
+  /* [2] */
+  background: #f2cd62;
+}
+
+/***********
+ * MENU LINK eats HAMBURGER
+ ***********/
+/**
+ * 1. Make possible to assign Width and Height
+ * 2. Size of the Menu Link
+ * 3. Prevent from taking the entire space
+ * 4. Center vertically the menu icon relative to the Menu Link Container
+ * 5. Color after menu link is pressed
+ **/
+.menu-link {
+  display: block;
+  /* [1] */
+  width: 55px;
+  /* [2] */
+  height: 55px;
+  /* [2] */
+  position: absolute;
+  /* [3] */
+  top: 0;
+  left: 0;
+}
+
+.hamburger-box {
+  position: relative;
+  top: 20px;
+  /* [4] */
+}
+
+.hamburger-bun, .hamburger-patty {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  margin: 0 auto 3px;
+  transition: all 100ms linear;
+}
+
+.menu-link.active .hamburger-bun, .menu-link.active .hamburber-patty {
+  background: #5290d2;
+  /* [5] */
+}
+.menu-link.active .hamburger-bun--top {
+  top: 6px;
+  transform: rotate(45deg);
+}
+.menu-link.active .hamburger-patty {
+  top: -1px;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+.menu-link.active .hamburger-bun--btm {
+  bottom: 6px;
+  transform: rotate(-45deg);
+}
+
+/***********
+ * BADGE (Logo)
+ ***********/
+/**
+ * 1. Vertically align the text based on the height of the container
+ * 2. Not the best way but fastest way to center absolute element inside a container. The margin-left aligns the element back to middle.
+ * 3. Align center the text inside
+ **/
+.kubi-badge {
+  display: block;
+  height: 55px;
+  width: 55px;
+  line-height: 55px;
+  /* [1] */
+  position: absolute;
+  /* [2] */
+  left: 50%;
+  /* [2] */
+  margin-left: -28px;
+  /* [2] */
+  text-align: center;
+  /* [3] */
+}
+.kubi-badge > span {
+  font-size: 28px;
+  color: white;
+}
+
+/****************
+ * SOCIAL ICONS
+ ****************/
+/**
+ * 1. Vertically align the text based on the height of the container
+ * 2. Not the best way but fastest way to center absolute element inside a container. The margin-left aligns the element back to middle.
+ * 3. Align center the text inside
+ **/
+.social-icons {
+  display: none;
 }
