@@ -1,0 +1,37 @@
+/***********
+ * NAV SKIN
+ ***********/
+
+/*
+ * 1. Remove gap between lists
+ * 2. Increase the height of the button
+ * 3. Each has seperate line
+ */
+
+.nav-skin--custom-1{
+  width: 100%;
+
+  > li{
+    margin: 0; /* [1] */
+    width: 100%;
+
+    > a{
+      display: block;
+      padding: 10px 0; /* [2] */
+      text-align: center;
+      color: white;
+
+      .primary{
+        display: block; /* [3] */
+        font-size: 36px;
+      }
+
+      .secondary{
+        display: block; /* [3] */
+        font-size: 11px;
+        color: #666;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

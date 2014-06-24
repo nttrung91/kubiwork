@@ -1,0 +1,68 @@
+/*****
+ * MENU LINK eats HAMBURGER
+ *****/
+
+/**
+ * 1. Make possible to assign Width and Height
+ * 2. Size of the Menu Link
+ * 3. Icon stays top left relative to Nav-Bar
+ * 4. Vertically center the icon relative to Nav-Bar
+ * 5. Color after menu link is pressed
+ * 6. When in active, the menu link extend 100% and center the icon
+ **/
+
+.menu-link{
+  display: block; /* [1] */
+  width: $menu-link-size; /* [2] */
+  height: $menu-link-size; /* [2] */
+
+  position: absolute; /* [3] */
+  top: 0;
+  left: 0;
+
+  transition: all 200ms ease-out;
+}
+
+.hamburger-box{
+  position: relative;
+  top: 20px; /* [4] */
+}
+
+
+.hamburger-bun, .hamburger-patty{
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  margin: 0 auto 3px;
+  transition: all 200ms ease-in;
+}
+
+
+.menu-link.isActive{
+  background: white;
+  width: 100%; /* [6] */
+  text-align: center; /* [6] */
+
+  .hamburger-bun, .hamburber-patty{
+    background: #2E2E2E; /* [5] */
+  }
+
+  .hamburger-bun--top{
+    top: 6px;
+    transform: rotate(45deg);
+  }
+
+  .hamburger-patty{
+    top: -1px;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  .hamburger-bun--btm{
+    bottom: 6px;
+    transform: rotate(-45deg);
+  }
+
+}
