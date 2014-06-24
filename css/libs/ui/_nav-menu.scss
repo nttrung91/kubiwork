@@ -1,0 +1,39 @@
+/***********
+ * NAV MENU
+ ***********/
+
+/**
+ * 1. In order to make the menu to stretch as big as the browser, the menu needs to start at 0 position.
+ * 2. Move the menu xx pixels down
+ * 3. Make the menu stays under the Nav Bar
+ * 4. Make sure Javascript is turned on
+ * 5. Originally hide the menu
+ * 6. Create the fade-in/out effect
+ * 7. Show the menu and stretch the height to fit the browser's height
+ **/
+
+.nav-menu{
+  position: absolute; /* [1] */
+  top: 0; /* [1] */
+
+  ul{
+    margin-top: 70px; /* [2] */
+  }
+
+  z-index: 1; /* [3] */
+}
+
+.js .nav-menu{ /* [4] */
+  max-height: 0; /* [5] */
+  overflow: hidden; /* [5] */
+  opacity: 0; /* [6] */
+  transition: opacity 300ms ease-out; /* [6] */
+}
+
+.nav-menu.isActive{
+  height: 100%; /* [7] */
+  max-height: 100%; /* [7] */
+  opacity: 1; /* [6] */
+  width: 100%;
+  background: #343434;
+}

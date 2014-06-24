@@ -1994,6 +1994,11 @@ table pre {
   font-family: 'FontAwesome', sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 /* Page UI Components */
 
 /***********
@@ -2001,8 +2006,9 @@ table pre {
  ***********/
 
 /**
- * 1. Make site-nav stick on top at all time
+ * 1. Fixed Nav on top
  * 2. Stretch the container to 100% Screensize
+ * 3. Stay on top of Nav Menu (Nav Menu has z-index of 1)
  **/
 
 .nav-bar {
@@ -2011,19 +2017,22 @@ table pre {
   height: 55px;
   width: 100%;
   /* [2] */
-  background: #f2cd62;
+  background: #2b2b2b;
+  z-index: 2;
+  /* [3] */
 }
 
-/***********
+/*****
  * MENU LINK eats HAMBURGER
- ***********/
+ *****/
 
 /**
  * 1. Make possible to assign Width and Height
  * 2. Size of the Menu Link
- * 3. Prevent from taking the entire space
- * 4. Center vertically the menu icon relative to the Menu Link Container
+ * 3. Icon stays top left relative to Nav-Bar
+ * 4. Vertically center the icon relative to Nav-Bar
  * 5. Color after menu link is pressed
+ * 6. When in active, the menu link extend 100% and center the icon
  **/
 
 .menu-link {
@@ -2037,6 +2046,8 @@ table pre {
   /* [3] */
   top: 0;
   left: 0;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
 }
 
 .hamburger-box {
@@ -2053,30 +2064,38 @@ table pre {
   height: 3px;
   background: #fff;
   margin: 0 auto 3px;
-  -webkit-transition: all 100ms linear;
-  transition: all 100ms linear;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
 }
 
-.menu-link.active .hamburger-bun,
-.menu-link.active .hamburber-patty {
-  background: #5290d2;
+.menu-link.isActive {
+  background: white;
+  width: 100%;
+  /* [6] */
+  text-align: center;
+  /* [6] */
+}
+
+.menu-link.isActive .hamburger-bun,
+.menu-link.isActive .hamburber-patty {
+  background: #2E2E2E;
   /* [5] */
 }
 
-.menu-link.active .hamburger-bun--top {
+.menu-link.isActive .hamburger-bun--top {
   top: 6px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-.menu-link.active .hamburger-patty {
+.menu-link.isActive .hamburger-patty {
   top: -1px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   opacity: 0;
 }
 
-.menu-link.active .hamburger-bun--btm {
+.menu-link.isActive .hamburger-bun--btm {
   bottom: 6px;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
@@ -2088,7 +2107,7 @@ table pre {
 
 /**
  * 1. Vertically align the text based on the height of the container
- * 2. Not the best way but fastest way to center absolute element inside a container. The margin-left aligns the element back to middle.
+ * 2. Not the best way but fastest way to horizontally center absolute element inside a container. The margin-left aligns the element back to middle.
  * 3. Align center the text inside
  **/
 
@@ -2113,16 +2132,112 @@ table pre {
   color: white;
 }
 
+.kubi-badge.isActive {
+  display: none;
+}
+
 /****************
  * SOCIAL ICONS
  ****************/
 
 /**
- * 1. Vertically align the text based on the height of the container
- * 2. Not the best way but fastest way to center absolute element inside a container. The margin-left aligns the element back to middle.
- * 3. Align center the text inside
+ *
  **/
 
 .social-icons {
   display: none;
+}
+
+/***********
+ * NAV MENU
+ ***********/
+
+/**
+ * 1. In order to make the menu to stretch as big as the browser, the menu needs to start at 0 position.
+ * 2. Move the menu xx pixels down
+ * 3. Make the menu stays under the Nav Bar
+ * 4. Make sure Javascript is turned on
+ * 5. Originally hide the menu
+ * 6. Create the fade-in/out effect
+ * 7. Show the menu and stretch the height to fit the browser's height
+ **/
+
+.nav-menu {
+  position: absolute;
+  /* [1] */
+  top: 0;
+  /* [1] */
+  z-index: 1;
+  /* [3] */
+}
+
+.nav-menu ul {
+  margin-top: 70px;
+  /* [2] */
+}
+
+.js .nav-menu {
+  /* [4] */
+  max-height: 0;
+  /* [5] */
+  overflow: hidden;
+  /* [5] */
+  opacity: 0;
+  /* [6] */
+  -webkit-transition: opacity 300ms ease-out;
+  transition: opacity 300ms ease-out;
+  /* [6] */
+}
+
+.nav-menu.isActive {
+  height: 100%;
+  /* [7] */
+  max-height: 100%;
+  /* [7] */
+  opacity: 1;
+  /* [6] */
+  width: 100%;
+  background: #343434;
+}
+
+/***********
+ * NAV SKIN
+ ***********/
+
+/*
+ * 1. Remove gap between lists
+ * 2. Increase the height of the button
+ * 3. Each has seperate line
+ */
+
+.nav-skin--custom-1 {
+  width: 100%;
+}
+
+.nav-skin--custom-1 > li {
+  margin: 0;
+  /* [1] */
+  width: 100%;
+}
+
+.nav-skin--custom-1 > li > a {
+  display: block;
+  padding: 10px 0;
+  /* [2] */
+  text-align: center;
+  color: white;
+}
+
+.nav-skin--custom-1 > li > a .primary {
+  display: block;
+  /* [3] */
+  font-size: 36px;
+}
+
+.nav-skin--custom-1 > li > a .secondary {
+  display: block;
+  /* [3] */
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
 }
