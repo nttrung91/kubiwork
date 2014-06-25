@@ -1,0 +1,16 @@
+/*****
+ * PROJECTS
+ *****/
+
+/**
+ * 1. Move the projects section down "xx" pixels
+ **/
+
+.projects{
+  position: relative; /* [1] */
+  top: $nav-bar-height; /* [1] */
+  background: #111;
+}
+
+
+

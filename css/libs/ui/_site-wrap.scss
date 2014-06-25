@@ -1,0 +1,13 @@
+/*****
+ * SITE-WRAP
+ *****/
+
+/**
+ * 1. Contraint the height to be as tall as the browser's height
+ * 2. Anything outside of the height region will be hidden
+ **/
+
+ .site-wrap.isActive{
+  height: 100%; /* [1] */
+  overflow: hidden; /* [2] */
+ }

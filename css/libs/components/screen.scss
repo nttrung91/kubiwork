@@ -30,9 +30,11 @@
 //Default typography
 @import "typography/typography";
 @import "typography/typeColor";
+@import "typography/textShadow";
 @import "typography/skin/typeHighlight";
 @import "typography/skin/typeLowlight";
 @import "typography/skin/typeUpper";
+
 /* ==========================================================================
    Link
    ========================================================================== */
@@ -130,6 +132,15 @@
 @import "button/button";
 
 @import "button/buttonSkin";
+
+
+
+/* ==========================================================================
+   Curtain
+   ========================================================================== */
+@import "curtain/curtain";
+@import "curtain/curtainSkin";
+
 
 /* ==========================================================================
    Template

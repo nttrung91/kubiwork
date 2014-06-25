@@ -6,6 +6,7 @@
  * 1. Fixed Nav on top
  * 2. Stretch the container to 100% Screensize
  * 3. Stay on top of Nav Menu (Nav Menu has z-index of 1)
+ * 4. Add see-through effect
  **/
 
 .nav-bar{
@@ -13,7 +14,9 @@
   height: $nav-bar-height;
   width: 100%; /* [2] */
 
-  background: $black;
+  background: #111;
 
-  z-index: 2; /* [3] */
+  z-index: 101; /* [3] */
+
+  opacity: 0.9; /* [4] */
 }

@@ -1,0 +1,28 @@
+/***********
+ * CURTAIN (Overlay Background)
+ ***********/
+
+/**
+ * 1. Has same position as the element below
+ * 2. Same size as the element below
+ * 3. Run animation
+ * 4. Make animation runs smoother on Webkit engine
+ **/
+
+
+.curtain{
+  &:after{
+    content: "";
+
+    position: absolute; /* [1] */
+    top: 0; /* [1] */
+    left: 0; /* [1] */
+
+    height: 100%; /* [2] */
+    width: 100%; /* [2] */
+
+    transition: background 200ms ease-out, opacity 200ms ease-out; /* [3] */
+    transform: translate3d(0,0,0); /* [4] */
+  }
+}
+

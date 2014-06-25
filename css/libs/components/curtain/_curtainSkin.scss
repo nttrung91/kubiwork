@@ -1,0 +1,19 @@
+/***********
+ * [HOVER] CURTAIN (Overlay Background)
+ ***********/
+
+/**
+ * 1. See through the content of the element below it
+ * 2. Position the Curtain to stay on top or below certain element
+ **/
+
+.curtain--dark{
+  &:hover{
+    &:after{
+      background: black;
+      opacity: 0.6; /* [1] */
+      z-index: 1; /* [2] */
+    }
+  }
+}
+

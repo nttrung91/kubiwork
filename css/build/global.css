@@ -707,6 +707,16 @@ code {
 * @tested       
 * @requires     
 */
+/***********
+ * TEXT SHADOW
+ ***********/
+/**
+ *
+ **/
+.textShadow {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
 .typeHighlight {
   color: #5290d2;
 }
@@ -1376,6 +1386,51 @@ button {
 }
 
 /* ==========================================================================
+   Curtain
+   ========================================================================== */
+/***********
+ * CURTAIN (Overlay Background)
+ ***********/
+/**
+ * 1. Has same position as the element below
+ * 2. Same size as the element below
+ * 3. Run animation
+ * 4. Make animation runs smoother on Webkit engine
+ **/
+.curtain:after {
+  content: "";
+  position: absolute;
+  /* [1] */
+  top: 0;
+  /* [1] */
+  left: 0;
+  /* [1] */
+  height: 100%;
+  /* [2] */
+  width: 100%;
+  /* [2] */
+  transition: background 200ms ease-out, opacity 200ms ease-out;
+  /* [3] */
+  transform: translate3d(0, 0, 0);
+  /* [4] */
+}
+
+/***********
+ * [HOVER] CURTAIN (Overlay Background)
+ ***********/
+/**
+ * 1. See through the content of the element below it
+ * 2. Position the Curtain to stay on top or below certain element
+ **/
+.curtain--dark:hover:after {
+  background: black;
+  opacity: 0.6;
+  /* [1] */
+  z-index: 1;
+  /* [2] */
+}
+
+/* ==========================================================================
    Template
    ========================================================================== */
 /* ==========================================================================
@@ -1746,6 +1801,20 @@ html, body {
 }
 
 /* Page UI Components */
+/*****
+ * SITE-WRAP
+ *****/
+/**
+ * 1. Contraint the height to be as tall as the browser's height
+ * 2. Anything outside of the height region will be hidden
+ **/
+.site-wrap.isActive {
+  height: 100%;
+  /* [1] */
+  overflow: hidden;
+  /* [2] */
+}
+
 /***********
  * NAV BAR
  ***********/
@@ -1753,6 +1822,7 @@ html, body {
  * 1. Fixed Nav on top
  * 2. Stretch the container to 100% Screensize
  * 3. Stay on top of Nav Menu (Nav Menu has z-index of 1)
+ * 4. Add see-through effect
  **/
 .nav-bar {
   position: fixed;
@@ -1760,21 +1830,23 @@ html, body {
   height: 55px;
   width: 100%;
   /* [2] */
-  background: #2b2b2b;
-  z-index: 2;
+  background: #111;
+  z-index: 101;
   /* [3] */
+  opacity: 0.9;
+  /* [4] */
 }
 
 /*****
  * MENU LINK eats HAMBURGER
  *****/
 /**
- * 1. Make possible to assign Width and Height
+ * 1. Display block allows us to assign width and height
  * 2. Size of the Menu Link
  * 3. Icon stays top left relative to Nav-Bar
  * 4. Vertically center the icon relative to Nav-Bar
  * 5. Color after menu link is pressed
- * 6. When in active, the menu link extend 100% and center the icon
+ * 6. Center the icon
  **/
 .menu-link {
   display: block;
@@ -1787,7 +1859,8 @@ html, body {
   /* [3] */
   top: 0;
   left: 0;
-  transition: all 200ms ease-out;
+  transition: background 230ms ease-out;
+  transform: translate3d(0, 0, 0);
 }
 
 .hamburger-box {
@@ -1803,13 +1876,12 @@ html, body {
   height: 3px;
   background: #fff;
   margin: 0 auto 3px;
-  transition: all 200ms ease-in;
+  transition: background 230ms ease-in;
+  transform: translate3d(0, 0, 0);
 }
 
 .menu-link.isActive {
   background: white;
-  width: 100%;
-  /* [6] */
   text-align: center;
   /* [6] */
 }
@@ -1884,18 +1956,31 @@ html, body {
  * 5. Originally hide the menu
  * 6. Create the fade-in/out effect
  * 7. Show the menu and stretch the height to fit the browser's height
+ * 8. The container is scrollable when the content exceeds the screen's 100% height
+ * 9. Create a default state for animation (See 11)
+ * 10. Create the fade-in animation one-by-one of each navigation item
+ * 11. End state of the animation from Point 9
+ * 12. One follow after another animation
  **/
 .nav-menu {
-  position: absolute;
+  position: fixed;
   /* [1] */
   top: 0;
   /* [1] */
-  z-index: 1;
+  z-index: 100;
   /* [3] */
 }
 .nav-menu ul {
-  margin-top: 70px;
+  margin-top: 60px;
   /* [2] */
+}
+.nav-menu ul li {
+  position: relative;
+  /* [9] */
+  top: 0;
+  /* [9] */
+  opacity: 0;
+  /* [9] */
 }
 
 .js .nav-menu {
@@ -1906,7 +1991,7 @@ html, body {
   /* [5] */
   opacity: 0;
   /* [6] */
-  transition: opacity 300ms ease-out;
+  transition: opacity 200ms ease-in;
   /* [6] */
 }
 
@@ -1919,6 +2004,34 @@ html, body {
   /* [6] */
   width: 100%;
   background: #343434;
+  overflow: scroll;
+  /* [8] */
+}
+.nav-menu.isActive ul li {
+  /* [10] */
+  position: relative;
+  /* [11] */
+  top: 10px;
+  /* [11] */
+  opacity: 1;
+  /* [11] */
+  transition: top 200ms ease-in, opacity 200ms ease-in;
+}
+.nav-menu.isActive ul li:nth-child(1) {
+  transition-delay: 160ms;
+  /* [12] */
+}
+.nav-menu.isActive ul li:nth-child(2) {
+  transition-delay: 180ms;
+  /* [12] */
+}
+.nav-menu.isActive ul li:nth-child(3) {
+  transition-delay: 200ms;
+  /* [12] */
+}
+.nav-menu.isActive ul li:nth-child(4) {
+  transition-delay: 220ms;
+  /* [12] */
 }
 
 /***********
@@ -1955,4 +2068,100 @@ html, body {
   font-size: 11px;
   color: #666;
   text-transform: uppercase;
+}
+
+/*****
+ * PROJECTS
+ *****/
+/**
+ * 1. Move the projects section down "xx" pixels
+ **/
+.projects {
+  position: relative;
+  /* [1] */
+  top: 55px;
+  /* [1] */
+  background: #111;
+}
+
+/*****
+ * EACH PROJECT
+ *****/
+/**
+ * 1. Project will stretch full-screen
+ * 2. Center the texts
+ * 3. The height of each project container is 200px
+ * 4. Contents that stretch beyond this height will be hidden
+ * 5. Allow the elements inside the link to position corresponded to the link
+ * 6. Make the whole area clickable
+ * 7. Control the background styling for all images
+ * 8. Link hover animation
+ * 9. Stay on top of the curtain
+ * 10. Resize the image to smaller size
+ **/
+.project {
+  width: 100%;
+  /* [1] */
+  text-align: center;
+  /* [2] */
+  height: 200px;
+  /* [3] */
+  overflow: hidden;
+  /* [4] */
+}
+.project > a {
+  position: relative;
+  /* [5] */
+  display: block;
+  /* [6] */
+  height: 100%;
+  /* [6] */
+  width: 100%;
+  /* [6] */
+  overflow: hidden;
+  background-size: 100% auto;
+  /* [7] */
+  background-position: top center;
+  /* [7] */
+  background-repeat: no-repeat;
+  /* [7] */
+  transition: transform 200ms cubic-bezier(0.58, -1, 0.54, 2);
+  /* [8] */
+  transform: translate3d(0, 0, 0);
+  /* HOVER ON LINK */
+}
+.project > a > .logo {
+  display: block;
+  position: relative;
+  top: 60px;
+  z-index: 2;
+  /* [9] */
+}
+.project > a > .logo .title {
+  display: block;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: color 200ms ease-out;
+}
+.project > a > .logo .description {
+  color: white;
+}
+.project > a:hover {
+  transform: scale(0.92);
+  /* [10] */
+}
+.project > a:hover > .logo .title {
+  color: #f2cd62;
+}
+
+/*
+ * List of project images
+ */
+.kb-project-pressa {
+  background-image: url("/images/humblemakers.jpg");
+}
+
+.kb-project-mrmarvelous {
+  background-image: url("/images/project1.jpg");
 }

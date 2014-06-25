@@ -3,12 +3,12 @@
  *****/
 
 /**
- * 1. Make possible to assign Width and Height
+ * 1. Display block allows us to assign width and height
  * 2. Size of the Menu Link
  * 3. Icon stays top left relative to Nav-Bar
  * 4. Vertically center the icon relative to Nav-Bar
  * 5. Color after menu link is pressed
- * 6. When in active, the menu link extend 100% and center the icon
+ * 6. Center the icon
  **/
 
 .menu-link{
@@ -20,7 +20,9 @@
   top: 0;
   left: 0;
 
-  transition: all 200ms ease-out;
+  transition: background 230ms ease-out;
+
+  transform: translate3d(0,0,0);
 }
 
 .hamburger-box{
@@ -36,13 +38,15 @@
   height: 3px;
   background: #fff;
   margin: 0 auto 3px;
-  transition: all 200ms ease-in;
+  transition: background 230ms ease-in;
+
+  transform: translate3d(0,0,0);
+
 }
 
 
 .menu-link.isActive{
   background: white;
-  width: 100%; /* [6] */
   text-align: center; /* [6] */
 
   .hamburger-bun, .hamburber-patty{

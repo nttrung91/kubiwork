@@ -1,0 +1,88 @@
+/*****
+ * EACH PROJECT
+ *****/
+
+/**
+ * 1. Project will stretch full-screen
+ * 2. Center the texts
+ * 3. The height of each project container is 200px
+ * 4. Contents that stretch beyond this height will be hidden
+ * 5. Allow the elements inside the link to position corresponded to the link
+ * 6. Make the whole area clickable
+ * 7. Control the background styling for all images
+ * 8. Link hover animation
+ * 9. Stay on top of the curtain
+ * 10. Resize the image to smaller size
+ **/
+
+.project{
+  width: 100%; /* [1] */
+  text-align: center; /* [2] */
+  height: 200px; /* [3] */
+  overflow: hidden; /* [4] */
+
+  > a{
+    position: relative; /* [5] */
+
+    display: block; /* [6] */
+    height: 100%; /* [6] */
+    width: 100%; /* [6] */
+
+    overflow: hidden;
+
+    background-size: 100% auto; /* [7] */
+    background-position: top center; /* [7] */
+    background-repeat: no-repeat; /* [7] */
+
+    transition: transform 200ms cubic-bezier(.58,-1,.54,2); /* [8] */
+
+    transform: translate3d(0,0,0);
+
+    > .logo{ // The texts on top of the link
+      display: block;
+
+      position: relative;
+      top: 60px;
+
+      z-index: 2; /* [9] */
+
+      .title{
+        display: block;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+
+        transition: color 200ms ease-out;
+      }
+
+      .description{
+        color: white;
+      }
+    }
+
+    /* HOVER ON LINK */
+    &:hover{
+      transform: scale(0.92); /* [10] */
+
+      > .logo {
+        .title{
+          color: $lightYellow;
+        }
+      }
+    }
+
+  }
+
+}
+
+/*
+ * List of project images
+ */
+
+.kb-project-pressa{
+  background-image: url("/images/humblemakers.jpg");
+}
+
+.kb-project-mrmarvelous{
+  background-image: url("/images/project1.jpg");
+}
