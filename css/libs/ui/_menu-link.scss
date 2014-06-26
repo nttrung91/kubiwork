@@ -31,16 +31,16 @@
 
   transform: translate3d(0,0,0);
 
-  &:hover{
-    background: #444;
-  }
-
   /******************\
    * Menu Link Size 2
   \******************/
   @include bp(teen-bear){
     width: $menu-link-size2; /* [~~1] */
     height: $menu-link-size2; /* [~~1] */
+
+    &:hover{
+      background: #444;
+    }
   }
 }
 
