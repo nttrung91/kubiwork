@@ -2119,6 +2119,7 @@ body {
     width: 80px;
     /* [~~1] */
     background: #222;
+    opacity: 1;
   }
 }
 
@@ -2660,11 +2661,33 @@ body {
   overflow: hidden;
   /* [4] */
   /****************\
+   * Project Size 1
+  \****************/
+  /****************\
    * Project Size 2
+  \****************/
+  /****************\
+   * Project Size 3
   \****************/
 }
 
 @media (min-width: 660px) {
+  .project {
+    height: 300px;
+  }
+}
+
+@media (min-width: 900px) {
+  .project {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin-right: -4px;
+    height: 240px;
+  }
+}
+
+@media (min-width: 1275px) {
   .project {
     height: 300px;
   }
@@ -2711,6 +2734,18 @@ body {
   }
 }
 
+@media (min-width: 900px) {
+  .project > a > .logo {
+    top: 75px;
+  }
+}
+
+@media (min-width: 1275px) {
+  .project > a > .logo {
+    top: 100px;
+  }
+}
+
 .project > a > .logo .title {
   display: block;
   color: white;
@@ -2729,6 +2764,12 @@ body {
   }
 }
 
+@media (min-width: 900px) {
+  .project > a > .logo .title {
+    font-size: 36px;
+  }
+}
+
 .project > a > .logo .description {
   color: white;
   /********************\
@@ -2742,14 +2783,45 @@ body {
   }
 }
 
+@media (min-width: 900px) {
+  .project > a > .logo .description {
+    font-size: 15px;
+  }
+}
+
 .project > a:hover {
   -webkit-transform: scale(0.92);
   transform: scale(0.92);
   /* [10] */
 }
 
+@media (min-width: 1275px) {
+  .project > a:hover {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}
+
 .project > a:hover > .logo .title {
   color: #f2cd62;
+}
+
+@media (min-width: 900px) {
+  .project--full {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .project--small {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 900px) {
+  .project--big {
+    width: 66.66%;
+  }
 }
 
 /*

@@ -26,9 +26,30 @@
   overflow: hidden; /* [4] */
 
   /****************\
-   * Project Size 2
+   * Project Size 1
   \****************/
   @include bp(baby-bear){
+    height: 300px;
+  }
+
+
+  /****************\
+   * Project Size 2
+  \****************/
+  @include bp(teen-bear){
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin-right: -4px;
+
+    height: 240px;
+
+  }
+
+  /****************\
+   * Project Size 3
+  \****************/
+  @include bp(mama-bear){
     height: 300px;
   }
 
@@ -64,6 +85,14 @@
         top: 90px;
       }
 
+      @include bp(teen-bear){
+        top: 75px;
+      }
+
+      @include bp(mama-bear){
+        top: 100px;
+      }
+
 
       .title{
         display: block;
@@ -79,6 +108,10 @@
         @include bp(baby-bear){
           font-size: 45px;
         }
+
+        @include bp(teen-bear){
+          font-size: 36px;
+        }
       }
 
       .description{
@@ -90,12 +123,20 @@
         @include bp(baby-bear){
           font-size: 17px;
         }
+
+        @include bp(teen-bear){
+          font-size: 15px;
+        }
       }
     }
 
     /* HOVER ON LINK */
     &:hover{
       transform: scale(0.92); /* [10] */
+
+      @include bp(mama-bear){
+        transform: scale(0.95);
+      }
 
       > .logo {
         .title{
@@ -105,6 +146,25 @@
     }
   }
 
+}
+
+
+.project--full{
+  @include bp(teen-bear){
+    width: 100%;
+  }
+}
+
+.project--small{
+  @include bp(teen-bear){
+    width: 33.33%;
+  }
+}
+
+.project--big{
+  @include bp(teen-bear){
+    width: 66.66%;
+  }
 }
 
 /*
