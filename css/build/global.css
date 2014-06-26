@@ -2314,7 +2314,7 @@ html, body {
 }
 @media (min-width: 660px) {
   .project {
-    height: 250px;
+    height: 300px;
   }
 }
 .project > a {
@@ -2350,7 +2350,7 @@ html, body {
 }
 @media (min-width: 660px) {
   .project > a > .logo {
-    top: 74px;
+    top: 90px;
   }
 }
 .project > a > .logo .title {
@@ -2365,7 +2365,7 @@ html, body {
 }
 @media (min-width: 660px) {
   .project > a > .logo .title {
-    font-size: 40px;
+    font-size: 45px;
   }
 }
 .project > a > .logo .description {
@@ -2376,7 +2376,7 @@ html, body {
 }
 @media (min-width: 660px) {
   .project > a > .logo .description {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .project > a:hover {
@@ -2391,9 +2391,9 @@ html, body {
  * List of project images
  */
 .kb-project-pressa {
-  background-image: url("/images/humblemakers.jpg");
+  background-image: url("/site/images/p1.jpg");
 }
 
 .kb-project-mrmarvelous {
-  background-image: url("/images/project1.jpg");
+  background-image: url("/site/images/p2.jpg");
 }

@@ -29,7 +29,7 @@
    * Project Size 2
   \****************/
   @include bp(baby-bear){
-    height: 250px;
+    height: 300px;
   }
 
   > a{
@@ -61,7 +61,7 @@
        * Logo Size 2
       \****************/
       @include bp(baby-bear){
-        top: 74px;
+        top: 90px;
       }
 
 
@@ -77,7 +77,7 @@
          * Title Size 2
         \****************/
         @include bp(baby-bear){
-          font-size: 40px;
+          font-size: 45px;
         }
       }
 
@@ -88,7 +88,7 @@
          * Description Size 2
         \********************/
         @include bp(baby-bear){
-          font-size: 16px;
+          font-size: 17px;
         }
       }
     }
@@ -112,9 +112,9 @@
  */
 
 .kb-project-pressa{
-  background-image: url("/images/humblemakers.jpg");
+  background-image: url("/site/images/p1.jpg");
 }
 
 .kb-project-mrmarvelous{
-  background-image: url("/images/project1.jpg");
+  background-image: url("/site/images/p2.jpg");
 }
