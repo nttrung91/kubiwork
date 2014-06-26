@@ -2092,6 +2092,10 @@ body {
  * 4. Add see-through effect
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ * 1. Flip the nav bar vertically
+ */
+
 .nav-bar {
   position: fixed;
   /* [1] */
@@ -2103,6 +2107,19 @@ body {
   /* [3] */
   opacity: 0.9;
   /* [4] */
+  /****************\
+   * Nav-bar Size 2
+  \****************/
+}
+
+@media (min-width: 900px) {
+  .nav-bar {
+    height: 100%;
+    /* [~~1] */
+    width: 80px;
+    /* [~~1] */
+    background: #222;
+  }
 }
 
 /*****
@@ -2118,6 +2135,13 @@ body {
  * 6. Center the icon
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ * 1. Bigger Menu Link Icon for Bigger Screen
+ * 2. Same as [2]
+ * 3. Make the Menu-link icon bigger
+ * 4. For the Menu-link on bigger screen, Width = Height
+ */
+
 .menu-link {
   display: block;
   /* [1] */
@@ -2129,16 +2153,42 @@ body {
   /* [3] */
   top: 0;
   left: 0;
-  -webkit-transition: background 230ms ease-out;
-  transition: background 230ms ease-out;
+  -webkit-transition: width 230ms ease-out, background 230ms ease-out;
+  transition: width 230ms ease-out, background 230ms ease-out;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  /******************\
+   * Menu Link Size 2
+  \******************/
+}
+
+.menu-link:hover {
+  background: #444;
+}
+
+@media (min-width: 900px) {
+  .menu-link {
+    width: 80px;
+    /* [~~1] */
+    height: 80px;
+    /* [~~1] */
+  }
 }
 
 .hamburger-box {
   position: relative;
   top: 20px;
   /* [4] */
+  /*********************\
+   * Hamburger Box Size 2
+  \*********************/
+}
+
+@media (min-width: 900px) {
+  .hamburger-box {
+    top: 30px;
+    /* [~~2] */
+  }
 }
 
 .hamburger-bun,
@@ -2149,16 +2199,44 @@ body {
   height: 3px;
   background: #fff;
   margin: 0 auto 3px;
-  -webkit-transition: background 230ms ease-in;
-  transition: background 230ms ease-in;
+  -webkit-transition: all 230ms ease-in;
+  transition: all 230ms ease-in;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  /******************\
+   * Bun & Patty Size 2
+  \******************/
+}
+
+@media (min-width: 900px) {
+  .hamburger-bun,
+  .hamburger-patty {
+    width: 26px;
+    /* [~~3] */
+    height: 4px;
+    /* [~~3] */
+    margin: 0 auto 4px;
+    /* [~~3] */
+    -webkit-transition: all 80ms linear;
+    transition: all 80ms linear;
+  }
 }
 
 .menu-link.isActive {
   background: white;
   text-align: center;
   /* [6] */
+  width: 100%;
+  /******************\
+   * Menu Link Size 2
+  \******************/
+}
+
+@media (min-width: 900px) {
+  .menu-link.isActive {
+    width: 80px;
+    /* [~~4] */
+  }
 }
 
 .menu-link.isActive .hamburger-bun,
@@ -2171,6 +2249,15 @@ body {
   top: 6px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  /******************\
+   * Bun Top Size 2
+  \******************/
+}
+
+@media (min-width: 900px) {
+  .menu-link.isActive .hamburger-bun--top {
+    top: 10px;
+  }
 }
 
 .menu-link.isActive .hamburger-patty {
@@ -2196,6 +2283,10 @@ body {
  * 3. Align center the text inside
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ *
+ */
+
 .kubi-badge {
   display: block;
   height: 55px;
@@ -2210,15 +2301,47 @@ body {
   /* [2] */
   text-align: center;
   /* [3] */
+  /****************\
+   * Badge Size 2
+  \****************/
+}
+
+@media (min-width: 900px) {
+  .kubi-badge {
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+  }
 }
 
 .kubi-badge > span {
   font-size: 28px;
   color: white;
+  /****************\
+   * Badge Text Size 2
+  \****************/
+}
+
+@media (min-width: 900px) {
+  .kubi-badge > span {
+    font-size: 32px;
+  }
 }
 
 .kubi-badge.isActive {
   display: none;
+  /********************\
+   * Badge Active Size 2
+  \********************/
+}
+
+@media (min-width: 900px) {
+  .kubi-badge.isActive {
+    display: block;
+  }
 }
 
 /****************
@@ -2252,6 +2375,10 @@ body {
  * 12. One follow after another animation
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ * 1. The menu starts at xx pixels instead of 0
+ */
+
 .nav-menu {
   position: fixed;
   /* [1] */
@@ -2259,11 +2386,33 @@ body {
   /* [1] */
   z-index: 100;
   /* [3] */
+  /******************\
+   * Nav Menu Size 2
+  \******************/
+}
+
+@media (min-width: 900px) {
+  .nav-menu {
+    padding-left: 80px;
+    /* [~~1] */
+  }
 }
 
 .nav-menu ul {
   margin-top: 60px;
   /* [2] */
+}
+
+@media (min-width: 660px) {
+  .nav-menu ul {
+    margin-top: 90px;
+  }
+}
+
+@media (min-width: 900px) {
+  .nav-menu ul {
+    margin-top: 30px;
+  }
 }
 
 .nav-menu ul li {
@@ -2319,10 +2468,24 @@ body {
   /* [12] */
 }
 
+@media (min-width: 900px) {
+  .nav-menu.isActive ul li:nth-child(1) {
+    -webkit-transition-delay: 220ms;
+    transition-delay: 220ms;
+  }
+}
+
 .nav-menu.isActive ul li:nth-child(2) {
   -webkit-transition-delay: 180ms;
   transition-delay: 180ms;
   /* [12] */
+}
+
+@media (min-width: 900px) {
+  .nav-menu.isActive ul li:nth-child(2) {
+    -webkit-transition-delay: 260ms;
+    transition-delay: 260ms;
+  }
 }
 
 .nav-menu.isActive ul li:nth-child(3) {
@@ -2331,10 +2494,24 @@ body {
   /* [12] */
 }
 
+@media (min-width: 900px) {
+  .nav-menu.isActive ul li:nth-child(3) {
+    -webkit-transition-delay: 300ms;
+    transition-delay: 300ms;
+  }
+}
+
 .nav-menu.isActive ul li:nth-child(4) {
   -webkit-transition-delay: 220ms;
   transition-delay: 220ms;
   /* [12] */
+}
+
+@media (min-width: 900px) {
+  .nav-menu.isActive ul li:nth-child(4) {
+    -webkit-transition-delay: 340ms;
+    transition-delay: 340ms;
+  }
 }
 
 /***********
@@ -2347,6 +2524,11 @@ body {
  * 3. Each has seperate line
  */
 
+/** SCREEN-SIZE 2 NOTES
+ * 1. All lists are pushed both top and bot, except for the first one
+ * 2. Left-align texts and push the texts xx pixels left
+ */
+
 .nav-skin--custom-1 {
   width: 100%;
 }
@@ -2357,11 +2539,34 @@ body {
   width: 100%;
 }
 
+@media (min-width: 900px) {
+  .nav-skin--custom-1 > li {
+    margin: 5px 0;
+  }
+
+  .nav-skin--custom-1 > li:first-child {
+    margin-top: 0;
+    /* [~~1] */
+  }
+}
+
 .nav-skin--custom-1 > li > a {
   display: block;
   padding: 10px 0;
   /* [2] */
   text-align: center;
+}
+
+@media (min-width: 900px) {
+  .nav-skin--custom-1 > li > a {
+    text-align: left;
+    /* [~~2] */
+    padding-left: 70px;
+    /* [~~2] */
+  }
+}
+
+.nav-skin--custom-1 > li > a:hover .primary {
   color: white;
 }
 
@@ -2369,6 +2574,15 @@ body {
   display: block;
   /* [3] */
   font-size: 36px;
+  color: #bbb;
+  -webkit-transition: color 200ms linear;
+  transition: color 200ms linear;
+}
+
+@media (min-width: 900px) {
+  .nav-skin--custom-1 > li > a .primary {
+    font-size: 50px;
+  }
 }
 
 .nav-skin--custom-1 > li > a .secondary {
@@ -2379,6 +2593,12 @@ body {
   text-transform: uppercase;
 }
 
+@media (min-width: 900px) {
+  .nav-skin--custom-1 > li > a .secondary {
+    font-size: 14px;
+  }
+}
+
 /*****
  * PROJECTS
  *****/
@@ -2387,12 +2607,26 @@ body {
  * 1. Move the projects section down "xx" pixels
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ *
+ */
+
 .projects {
   position: relative;
   /* [1] */
   top: 55px;
   /* [1] */
   background: #111;
+  /******************\
+   * Projects Size 2
+  \******************/
+}
+
+@media (min-width: 900px) {
+  .projects {
+    top: 0;
+    padding-left: 80px;
+  }
 }
 
 /*****
@@ -2412,6 +2646,10 @@ body {
  * 10. Resize the image to smaller size
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ *
+ */
+
 .project {
   width: 100%;
   /* [1] */
@@ -2421,6 +2659,15 @@ body {
   /* [3] */
   overflow: hidden;
   /* [4] */
+  /****************\
+   * Project Size 2
+  \****************/
+}
+
+@media (min-width: 660px) {
+  .project {
+    height: 250px;
+  }
 }
 
 .project > a {
@@ -2453,6 +2700,15 @@ body {
   top: 60px;
   z-index: 2;
   /* [9] */
+  /****************\
+   * Logo Size 2
+  \****************/
+}
+
+@media (min-width: 660px) {
+  .project > a > .logo {
+    top: 74px;
+  }
 }
 
 .project > a > .logo .title {
@@ -2462,10 +2718,28 @@ body {
   font-size: 30px;
   -webkit-transition: color 200ms ease-out;
   transition: color 200ms ease-out;
+  /****************\
+   * Title Size 2
+  \****************/
+}
+
+@media (min-width: 660px) {
+  .project > a > .logo .title {
+    font-size: 40px;
+  }
 }
 
 .project > a > .logo .description {
   color: white;
+  /********************\
+   * Description Size 2
+  \********************/
+}
+
+@media (min-width: 660px) {
+  .project > a > .logo .description {
+    font-size: 16px;
+  }
 }
 
 .project > a:hover {

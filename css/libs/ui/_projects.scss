@@ -6,10 +6,22 @@
  * 1. Move the projects section down "xx" pixels
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ *
+ */
+
 .projects{
   position: relative; /* [1] */
   top: $nav-bar-height; /* [1] */
   background: #111;
+
+  /******************\
+   * Projects Size 2
+  \******************/
+  @include bp(teen-bear){
+    top: 0;
+    padding-left: $nav-bar-width;
+  }
 }
 
 

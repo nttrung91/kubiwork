@@ -1,14 +1,22 @@
 @mixin bp($point) {
+
+  //Size 4
   @if $point == papa-bear {
     @media (min-width: 1600px) { @content; }
   }
+
+  // Size 3
   @else if $point == mama-bear {
     @media (min-width: 1250px) { @content; }
   }
+
+  // Size 2
   @else if $point == teen-bear {
-    @media (min-width: 1000px) { @content; }
+    @media (min-width: 900px) { @content; }
   }
+
+  // Size 1
   @else if $point == baby-bear {
-    @media (min-width: 600px)  { @content; }
+    @media (min-width: 660px)  { @content; }
   }
 }

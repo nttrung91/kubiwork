@@ -15,11 +15,22 @@
  * 10. Resize the image to smaller size
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ *
+ */
+
 .project{
   width: 100%; /* [1] */
   text-align: center; /* [2] */
   height: 200px; /* [3] */
   overflow: hidden; /* [4] */
+
+  /****************\
+   * Project Size 2
+  \****************/
+  @include bp(baby-bear){
+    height: 250px;
+  }
 
   > a{
     position: relative; /* [5] */
@@ -46,6 +57,14 @@
 
       z-index: 2; /* [9] */
 
+      /****************\
+       * Logo Size 2
+      \****************/
+      @include bp(baby-bear){
+        top: 74px;
+      }
+
+
       .title{
         display: block;
         color: white;
@@ -53,10 +72,24 @@
         font-size: 30px;
 
         transition: color 200ms ease-out;
+
+        /****************\
+         * Title Size 2
+        \****************/
+        @include bp(baby-bear){
+          font-size: 40px;
+        }
       }
 
       .description{
         color: white;
+
+        /********************\
+         * Description Size 2
+        \********************/
+        @include bp(baby-bear){
+          font-size: 16px;
+        }
       }
     }
 
@@ -70,7 +103,6 @@
         }
       }
     }
-
   }
 
 }

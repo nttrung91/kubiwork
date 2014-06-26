@@ -9,6 +9,10 @@
  * 4. Add see-through effect
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ * 1. Flip the nav bar vertically
+ */
+
 .nav-bar{
   position: fixed; /* [1] */
   height: $nav-bar-height;
@@ -19,4 +23,13 @@
   z-index: 101; /* [3] */
 
   opacity: 0.9; /* [4] */
+
+  /****************\
+   * Nav-bar Size 2
+  \****************/
+  @include bp(teen-bear){
+    height: 100%; /* [~~1] */
+    width: $nav-bar-width; /* [~~1] */
+    background: #222;
+  }
 }

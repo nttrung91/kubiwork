@@ -11,6 +11,13 @@
  * 6. Center the icon
  **/
 
+/** SCREEN-SIZE 2 NOTES
+ * 1. Bigger Menu Link Icon for Bigger Screen
+ * 2. Same as [2]
+ * 3. Make the Menu-link icon bigger
+ * 4. For the Menu-link on bigger screen, Width = Height
+ */
+
 .menu-link{
   display: block; /* [1] */
   width: $menu-link-size; /* [2] */
@@ -20,14 +27,33 @@
   top: 0;
   left: 0;
 
-  transition: background 230ms ease-out;
+  transition: width 230ms ease-out, background 230ms ease-out;
 
   transform: translate3d(0,0,0);
+
+  &:hover{
+    background: #444;
+  }
+
+  /******************\
+   * Menu Link Size 2
+  \******************/
+  @include bp(teen-bear){
+    width: $menu-link-size2; /* [~~1] */
+    height: $menu-link-size2; /* [~~1] */
+  }
 }
 
 .hamburger-box{
   position: relative;
   top: 20px; /* [4] */
+
+  /*********************\
+   * Hamburger Box Size 2
+  \*********************/
+  @include bp(teen-bear){
+    top: 30px; /* [~~2] */
+  }
 }
 
 
@@ -38,16 +64,34 @@
   height: 3px;
   background: #fff;
   margin: 0 auto 3px;
-  transition: background 230ms ease-in;
+  transition: all 230ms ease-in;
 
   transform: translate3d(0,0,0);
 
+  /******************\
+   * Bun & Patty Size 2
+  \******************/
+  @include bp(teen-bear){
+    width: 26px; /* [~~3] */
+    height: 4px; /* [~~3] */
+    margin: 0 auto 4px; /* [~~3] */
+
+    transition: all 80ms linear;
+  }
 }
 
 
 .menu-link.isActive{
   background: white;
   text-align: center; /* [6] */
+  width: 100%;
+
+  /******************\
+   * Menu Link Size 2
+  \******************/
+  @include bp(teen-bear){
+    width: $menu-link-size2; /* [~~4] */
+  }
 
   .hamburger-bun, .hamburber-patty{
     background: #2E2E2E; /* [5] */
@@ -56,6 +100,13 @@
   .hamburger-bun--top{
     top: 6px;
     transform: rotate(45deg);
+
+    /******************\
+     * Bun Top Size 2
+    \******************/
+    @include bp(teen-bear){
+      top: 10px;
+    }
   }
 
   .hamburger-patty{

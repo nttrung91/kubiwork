@@ -8,6 +8,11 @@
  * 3. Each has seperate line
  */
 
+/** SCREEN-SIZE 2 NOTES
+ * 1. All lists are pushed both top and bot, except for the first one
+ * 2. Left-align texts and push the texts xx pixels left
+ */
+
 .nav-skin--custom-1{
   width: 100%;
 
@@ -15,15 +20,40 @@
     margin: 0; /* [1] */
     width: 100%;
 
+    @include bp(teen-bear){
+      margin: 5px 0;
+
+      &:first-child{
+        margin-top: 0; /* [~~1] */
+      }
+    }
+
     > a{
       display: block;
       padding: 10px 0; /* [2] */
       text-align: center;
-      color: white;
+
+      @include bp(teen-bear){
+        text-align: left; /* [~~2] */
+        padding-left: 70px; /* [~~2] */
+      }
+
+      &:hover{
+        .primary{
+          color: white;
+        }
+      }
 
       .primary{
         display: block; /* [3] */
         font-size: 36px;
+        color: #bbb;
+
+        transition: color 200ms linear;
+
+        @include bp(teen-bear){
+          font-size: 50px;
+        }
       }
 
       .secondary{
@@ -31,6 +61,10 @@
         font-size: 11px;
         color: #666;
         text-transform: uppercase;
+
+        @include bp(teen-bear){
+          font-size: 14px;
+        }
       }
     }
   }
