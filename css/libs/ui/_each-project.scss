@@ -22,14 +22,14 @@
 .project{
   width: 100%; /* [1] */
   text-align: center; /* [2] */
-  height: 200px; /* [3] */
+  height: 180px; /* [3] */
   overflow: hidden; /* [4] */
 
   /****************\
    * Project Size 2
   \****************/
   @include bp(baby-bear){
-    height: 250px;
+    height: 300px;
   }
 
   > a{
@@ -41,8 +41,8 @@
 
     overflow: hidden;
 
-    background-size: 100% auto; /* [7] */
-    background-position: top center; /* [7] */
+    background-size: cover; /* [7] */
+    background-position: center center; /* [7] */
     background-repeat: no-repeat; /* [7] */
 
     transition: transform 200ms cubic-bezier(.58,-1,.54,2); /* [8] */
@@ -53,7 +53,7 @@
       display: block;
 
       position: relative;
-      top: 60px;
+      top: 52px;
 
       z-index: 2; /* [9] */
 
@@ -61,7 +61,7 @@
        * Logo Size 2
       \****************/
       @include bp(baby-bear){
-        top: 74px;
+        top: 90px;
       }
 
 
@@ -77,7 +77,7 @@
          * Title Size 2
         \****************/
         @include bp(baby-bear){
-          font-size: 40px;
+          font-size: 45px;
         }
       }
 
@@ -88,7 +88,7 @@
          * Description Size 2
         \********************/
         @include bp(baby-bear){
-          font-size: 16px;
+          font-size: 17px;
         }
       }
     }
@@ -112,9 +112,9 @@
  */
 
 .kb-project-pressa{
-  background-image: url("/images/humblemakers.jpg");
+  background-image: url("/images/p1.jpg");
 }
 
 .kb-project-mrmarvelous{
-  background-image: url("/images/project1.jpg");
+  background-image: url("/images/p2.jpg");
 }
