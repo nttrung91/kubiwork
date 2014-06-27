@@ -39,7 +39,7 @@
     height: $menu-link-size2; /* [~~1] */
 
     &:hover{
-      background: #444;
+      background: $menu-link-hover-color;
     }
   }
 }
@@ -62,7 +62,7 @@
   display: block;
   width: 20px;
   height: 3px;
-  background: #fff;
+  background: $hamburger-color;
   margin: 0 auto 3px;
   transition: all 230ms ease-in;
 
@@ -82,7 +82,7 @@
 
 
 .menu-link.isActive{
-  background: white;
+  background: $menu-link-active-color;
   text-align: center; /* [6] */
   width: 100%;
 
@@ -91,10 +91,11 @@
   \******************/
   @include bp(teen-bear){
     width: $menu-link-size2; /* [~~4] */
+    background: $menu-link-active-color-2;
   }
 
   .hamburger-bun, .hamburber-patty{
-    background: #2E2E2E; /* [5] */
+    background: $hamburger-active-color; /* [5] */
   }
 
   .hamburger-bun--top{

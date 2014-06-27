@@ -10,7 +10,7 @@
         <meta name="description" content="Portfolio site for Kubi">
 
 
-        <link rel="stylesheet" href="css/build/minified/global.css">
+        <link rel="stylesheet" href="../css/build/minified/global.css">
     </head>
 
     <body>
@@ -61,7 +61,7 @@
 
           <!-- @2b Navigation Menu -->
           <div class="nav-menu">
-            <ul class="nav-skin--custom-1 nav nav--stacked">
+            <ul class="nav-skin-1 nav nav--stacked">
               <li>
                 <a href="#">
                   <span class="primary">About</span>
@@ -98,106 +98,74 @@
 
         <!-- Projects Architecture
         **************************************************
-              1 Projects
-                |- 2: Each Project
-                   |- 3: Link Wrap
-                      |- 4a: Logo of each project
+              1a: Project
+                |- 2a: Figure (Project Image and Caption)
+                |- 2b: Content
+              1b: Project-controller
+                |- 2a*: Controller
         **************************************************
         -->
 
-        <!-- @1 Projects -->
-        <section class="projects">
+        <!-- @1 Project -->
+        <section class="project--single">
 
-          <!-- @2 Individual Project -->
-          <article class="project--showcase layout--default from100to50">
+          <figure class="image--wide curtain curtain--black">
+            <img src="/images/humblemakers.jpg" alt="Humblemakers Showing Pressa App">
 
-            <!-- @3 Link Wrap -->
-            <a href="#" class="kb-project-pressa curtain curtain--dark full-block">
-
-              <span class="logo">
-                <span class="title">Pressa</span>
-                <span class="description">A web app designed for autistic children </span>
+            <figcaption class="project__caption center">
+              <span class="text--block text--important-skin-1">
+                Pressa
               </span>
 
-            </a>
-
-          </article>
-
-
-          <article class="project--showcase layout--default from100to50">
-
-            <a href="#" class="kb-project-mrmarvelous curtain curtain--dark full-block">
-
-              <span class="logo">
-                <span class="title">Mr. Marvelous</span>
-                <span class="description">Ebay Listing Template</span>
+              <span class="text--block text--paragraph-skin-1">
+                A web app designed for autistic children
               </span>
 
-            </a>
+            </figcaption>
 
-          </article>
+            <ul class="nav project__skills">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Javascript</li>
+              <li>jQuery</li>
+            </ul>
 
-          <article class="project--showcase layout--default from100to50">
+          </figure>
 
-            <a href="#" class="kb-project-pressa curtain curtain--dark full-block">
+          <section class="project__content">
 
-              <span class="logo">
-                <span class="title">Pressa</span>
-                <span class="description">A web app designed for autistic children</span>
-              </span>
+            <section class="text-content">
+              <h2>
+                Strategy
+              </h2>
 
-            </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore at, necessitatibus temporibus totam velit corporis numquam aspernatur modi nihil consequuntur.</p>
+            </section>
 
-          </article>
+            <section class="image--wide">
+              <img src="/images/project1.jpg" alt="Project">
+            </section>
 
+            <section class="text-content">
+              <h2>
+                Strategy
+              </h2>
 
-          <article class="project--showcase layout--default from100to50">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore at, necessitatibus temporibus totam velit corporis numquam aspernatur modi nihil consequuntur.</p>
+            </section>
 
-            <a href="#" class="kb-project-mrmarvelous curtain curtain--dark full-block">
+            <section class="image--wide">
+              <img src="/images/project1.jpg" alt="Project">
+            </section>
 
-              <span class="logo">
-                <span class="title">Mr. Marvelous</span>
-                <span class="description">Ebay Listing Template</span>
-              </span>
-
-            </a>
-
-          </article>
-
-
-          <article class="project--showcase layout--default from100to50">
-
-            <a href="#" class="kb-project-pressa curtain curtain--dark full-block">
-
-              <span class="logo">
-                <span class="title textShadow">Pressa</span>
-                <span class="description textShadow">A web app designed for autistic children</span>
-              </span>
-
-            </a>
-
-          </article>
-
-          <article class="project--showcase layout--default from100to50">
-
-            <a href="#" class="kb-project-pressa curtain curtain--dark full-block">
-
-              <span class="logo">
-                <span class="title textShadow">Pressa</span>
-                <span class="description textShadow">A web app designed for autistic children</span>
-              </span>
-
-            </a>
-
-          </article>
-
+          </section>
         </section>
 
 
       </div>
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script src="js/build/production.min.js"></script>
+      <script src="../js/build/production.min.js"></script>
 
     </body>
 </html>

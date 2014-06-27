@@ -1,0 +1,42 @@
+.project--single{
+  padding-top: $nav-bar-height;
+
+  .project__caption{
+    text-align: center;
+    width: 100%;
+  }
+
+  .project__skills{
+    color: white;
+    position: absolute;
+    width: 100%;
+
+    text-align: center;
+    bottom: 15px;
+
+    li:first-child{
+      &:before{
+        content:"";
+        padding: 0;
+      }
+    }
+
+    li{
+      text-transform: uppercase;
+      font-size: 11px;
+
+      &:before{
+        content:"/";
+        padding: 0 14px;
+      }
+    }
+  }
+}
+
+.project__content{
+  padding: 0 20px 40px;
+
+  section{
+    margin: 40px 0;
+  }
+}

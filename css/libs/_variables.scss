@@ -153,17 +153,28 @@ $use-nav: true;
  * ===========================
  */
 
-// Theme Color
+// Global Color
 $theme-color: $blue;
+$nav-bar-content-color: $black;
 
 // nav-bar
 $nav-bar-height: 55px;
 $nav-bar-width: 80px;
+$nav-bar-bgColor: white;
 
 // menu-link
 $menu-link-size: $nav-bar-height;
 $menu-link-size2: $nav-bar-width;
+$menu-link-active-color: #555;
+$menu-link-active-color-2: $darkOrange;
+$menu-link-hover-color: #ddd;
+
+// hamburger
+$hamburger-color: $nav-bar-content-color;
+$hamburger-active-color: white;
+$hamburger-active-color-2: $darkOrange;
 
 // badge
 $badge-size: $nav-bar-height;
 $badge-size2: $nav-bar-width;
+$badge-color: $nav-bar-content-color;

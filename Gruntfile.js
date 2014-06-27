@@ -96,7 +96,7 @@ module.exports = function(grunt) {
         }
       },
       html: {
-        files: ['*.html'],
+        files: ['*.html', '*/*.html'],
         tasks:[],
         options:{
           spawn: false

@@ -5,6 +5,8 @@
 
 /* Page UI Components */
 @import "ui/site-wrap.scss";
+@import "ui/layout.scss";
+@import "ui/blocky.scss";
 
 @import "ui/nav-bar.scss";
 @import "ui/menu-link.scss";
@@ -13,7 +15,13 @@
 @import "ui/nav-menu.scss";
 @import "ui/nav-skin.scss";
 
+
 @import "ui/projects.scss";
-@import "ui/each-project.scss";
+@import "ui/project-showcase.scss";
+@import "ui/project-single.scss";
 
+@import "ui/typography.scss";
 
+@import "ui/text-content.scss";
+
+@import "ui/image.scss";

@@ -1,0 +1,25 @@
+.layout--default{
+  text-align: center;
+  overflow: hidden;
+
+  @include bp(teen-bear){
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -4px;
+  }
+}
+
+.from100to50{
+  width: 100%;
+
+  @include bp(teen-bear){
+    width: 50%;
+  }
+}
+
+.center{
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}

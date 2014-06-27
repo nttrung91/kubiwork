@@ -18,11 +18,11 @@
   height: $nav-bar-height;
   width: 100%; /* [2] */
 
-  background: #111;
+  background: $nav-bar-bgColor;
 
   z-index: 101; /* [3] */
 
-  opacity: 0.9; /* [4] */
+  opacity: 0.94; /* [4] */
 
   /****************\
    * Nav-bar Size 2
@@ -30,7 +30,6 @@
   @include bp(teen-bear){
     height: 100%; /* [~~1] */
     width: $nav-bar-width; /* [~~1] */
-    background: #222;
 
     opacity: 1;
   }
