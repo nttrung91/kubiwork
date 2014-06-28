@@ -22,7 +22,7 @@
 
   z-index: 101; /* [3] */
 
-  opacity: 0.94; /* [4] */
+  opacity: 0.96; /* [4] */
 
   transition: background 200ms linear;
 
@@ -34,8 +34,6 @@
     width: $nav-bar-width; /* [~~1] */
 
     opacity: 1;
-
-    background: #f9f9f9;
   }
 }
 

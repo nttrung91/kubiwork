@@ -1,17 +1,38 @@
 .text-content{
   text-align: center;
 
+  @include bp(baby-bear){
+    width: 600px;
+  }
+
   @include bp(mama-bear){
-    width: 700px;
+    width: 900px;
   }
 
   h2{
     font-size: 28px;
+    color: #3A3D42;
+
+    @include bp(teen-bear){
+      font-size: 40px;
+    }
+
+    @include bp(mama-bear){
+      font-size: 50px;
+    }
   }
 
   p{
     line-height: 1.9;
-    color: #666;
+    color: #81858F;
     font-size: 16px;
+
+    @include bp(teen-bear){
+      font-size: 17px;
+    }
+
+    @include bp(mama-bear){
+      font-size: 20px;
+    }
   }
 }

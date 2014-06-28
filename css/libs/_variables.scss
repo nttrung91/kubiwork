@@ -14,14 +14,14 @@
 */
 
 /* Colors */
-$white: #FEFEFE;
+$white: #F0F1F5;
 
-$black: #2B2B2B;
-$grey: #666;
+$black: #3A3D42;
+$grey: #81858F;
 $lightGrey: #999;
 $spaceGrey: #272E38;
 
-$blue: #5290D2;
+$blue: #6FB7F3;
 $lightBlue: #8ebaf4;
 
 $green: #6DF465;
@@ -155,23 +155,28 @@ $use-nav: true;
 
 // Global Color
 $theme-color: $blue;
-$nav-bar-content-color: $black;
+$nav-bar-content-color: $white;
 
 // nav-bar
-$nav-bar-height: 55px;
-$nav-bar-width: 80px;
-$nav-bar-bgColor: white;
+$nav-bar-height: 55px; // small screen
+$nav-bar-width: 80px; // larger screen
+// $nav-bar-bgColor: #2C9FC8; // small screen
+// $nav-bar-bgColor: #6FB7F3; // small screen
+$nav-bar-bgColor: darken($black,5%);
+$nav-bar-bgColor-2: #333;
+
 
 // menu-link
-$menu-link-size: $nav-bar-height;
-$menu-link-size2: $nav-bar-width;
-$menu-link-active-color: #555;
-$menu-link-active-color-2: $darkOrange;
-$menu-link-hover-color: #ddd;
+$menu-link-size: $nav-bar-height; // small screen
+$menu-link-size2: $nav-bar-width; // big screen
+
+$menu-link-active-color: $white; // small screen
+$menu-link-active-color-2: $white;
+$menu-link-hover-color: lighten($black,4%);
 
 // hamburger
 $hamburger-color: $nav-bar-content-color;
-$hamburger-active-color: white;
+$hamburger-active-color: $black;
 $hamburger-active-color-2: $darkOrange;
 
 // badge

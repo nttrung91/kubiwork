@@ -41,6 +41,8 @@
 
     transform: translate3d(0,0,0);
 
+    overflow: hidden;
+
     > .logo{ // The texts on top of the link
       display: block;
 
@@ -96,7 +98,7 @@
 
     /* HOVER ON LINK */
     &:hover{
-      transform: scale(0.92); /* [10] */
+      transform: scale(0.95); /* [10] */
 
       @include bp(mama-bear){
         transform: scale(0.95);

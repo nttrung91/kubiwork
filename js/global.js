@@ -22,17 +22,19 @@ $menuLink.click(function() {
 
 });
 
+if(window.location.pathname.indexOf("project") > -1){
+  $(window).scroll(function() {
+    var windowHeight = $(window).height();
+    var bodyOffSet = window.pageYOffset;
 
-$(window).scroll(function() {
-  var windowHeight = $(window).height();
-  var bodyOffSet = window.pageYOffset;
 
+    if(bodyOffSet > windowHeight)
+      $(".nav-bar").addClass("newColor");
+    else
+      $(".nav-bar").removeClass("newColor");
 
-  if(bodyOffSet > windowHeight)
-    $(".nav-bar").addClass("newColor");
-  else
-    $(".nav-bar").removeClass("newColor");
+  });
+}
 
-});
 
 

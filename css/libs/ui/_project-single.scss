@@ -25,7 +25,7 @@
   }
 
   .project__skills{
-    color: white;
+    color: $white;
     position: absolute;
     width: 100%;
 
@@ -59,6 +59,10 @@
         font-size: 17px;
       }
 
+      @include bp(teen-bear){
+        font-size: 20px;
+      }
+
       &:before{
         content:"/";
         padding: 0 14px;
@@ -69,6 +73,10 @@
 
         @include bp(teen-bear){
           padding: 0 35px;
+        }
+
+        @include bp(mama-bear){
+          padding: 0 45px;
         }
       }
     }

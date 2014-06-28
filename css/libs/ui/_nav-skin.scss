@@ -47,19 +47,19 @@
       .primary{
         display: block; /* [3] */
         font-size: 36px;
-        color: #bbb;
+        color: #CED1D9;
 
         transition: color 200ms linear;
 
         @include bp(teen-bear){
-          font-size: 50px;
+          font-size: 56px;
         }
       }
 
       .secondary{
         display: block; /* [3] */
         font-size: 11px;
-        color: #666;
+        color: #81858F;
         text-transform: uppercase;
 
         @include bp(teen-bear){

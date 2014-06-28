@@ -12,6 +12,7 @@
 
 .curtain{
   &:before{
+    display: block;
     content: "";
 
     position: absolute; /* [1] */

@@ -10,10 +10,14 @@
   @include bp(teen-bear){
     font-size: 70px;
   }
+
+  @include bp(mama-bear){
+    font-size: 120px;
+  }
  }
 
  .text--paragraph-skin-1{
-  color: white;
+  color: $white;
 
   @include bp(baby-bear){
     font-size: 18px;
@@ -21,6 +25,10 @@
 
   @include bp(teen-bear){
     font-size: 20px;
+  }
+
+  @include bp(mama-bear){
+    font-size: 30px;
   }
  }
 
