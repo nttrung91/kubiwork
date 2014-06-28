@@ -2,11 +2,30 @@
   font-size: 36px;
   font-weight: bold;
   color: $lightYellow;
+
+  @include bp(baby-bear){
+    font-size:54px;
+  }
+
+  @include bp(teen-bear){
+    font-size: 70px;
+  }
  }
 
  .text--paragraph-skin-1{
   color: white;
+
+  @include bp(baby-bear){
+    font-size: 18px;
+  }
+
+  @include bp(teen-bear){
+    font-size: 20px;
+  }
  }
+
+
+
 
  .text--block{
   display: block;

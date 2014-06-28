@@ -1,6 +1,24 @@
 .project--single{
   padding-top: $nav-bar-height;
 
+  @include bp(teen-bear){
+    padding-top: 0;
+    padding-left: $nav-bar-width;
+    height: 100%;
+  }
+
+  .project__main-image{
+    height: 240px;
+
+    @include bp(baby-bear){
+      height: 450px;
+    }
+
+    @include bp(mama-bear){
+      height: 100%;
+    }
+  }
+
   .project__caption{
     text-align: center;
     width: 100%;
@@ -14,6 +32,14 @@
     text-align: center;
     bottom: 15px;
 
+    @include bp(baby-bear){
+      bottom: 20px;
+    }
+
+    @include bp(teen-bear){
+      bottom: 27px;
+    }
+
     li:first-child{
       &:before{
         content:"";
@@ -25,18 +51,47 @@
       text-transform: uppercase;
       font-size: 11px;
 
+      @include bp(baby-bear){
+        font-size: 14px;
+      }
+
+      @include bp(teen-bear){
+        font-size: 17px;
+      }
+
       &:before{
         content:"/";
         padding: 0 14px;
+
+        @include bp(baby-bear){
+          padding: 0 25px;
+        }
+
+        @include bp(teen-bear){
+          padding: 0 35px;
+        }
       }
+    }
+  }
+
+
+  .project__content{
+    padding: 0 20px 40px;
+
+    @include bp(baby-bear){
+      padding: 0 30px 40px;
+    }
+
+    section{
+
+      &:first-child{
+        margin: 0 auto;
+        padding-top: 40px;
+      }
+
+      margin: 40px auto;
     }
   }
 }
 
-.project__content{
-  padding: 0 20px 40px;
 
-  section{
-    margin: 40px 0;
-  }
-}

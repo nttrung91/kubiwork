@@ -7,6 +7,12 @@
  * 2. Anything outside of the height region will be hidden
  **/
 
+ .site-wrap{
+  @include bp(mama-bear){
+    height: 100%;
+  }
+ }
+
  .site-wrap.isActive{
   height: 100%; /* [1] */
   overflow: hidden; /* [2] */

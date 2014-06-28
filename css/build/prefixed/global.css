@@ -2058,6 +2058,12 @@ body {
  * 2. Anything outside of the height region will be hidden
  **/
 
+@media (min-width: 1275px) {
+  .site-wrap {
+    height: 100%;
+  }
+}
+
 .site-wrap.isActive {
   height: 100%;
   /* [1] */
@@ -2101,9 +2107,6 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 /***********
@@ -2132,6 +2135,8 @@ body {
   /* [3] */
   opacity: 0.94;
   /* [4] */
+  -webkit-transition: background 200ms linear;
+  transition: background 200ms linear;
   /****************\
    * Nav-bar Size 2
   \****************/
@@ -2144,7 +2149,21 @@ body {
     width: 80px;
     /* [~~1] */
     opacity: 1;
+    background: #f9f9f9;
   }
+}
+
+.newColor {
+  background: #5290d2;
+}
+
+.newColor .hamburger-bun,
+.newColor .hamburger-patty {
+  background: white !important;
+}
+
+.newColor .kubi-badge span {
+  color: white !important;
 }
 
 /*****
@@ -2809,6 +2828,30 @@ body {
   padding-top: 55px;
 }
 
+@media (min-width: 900px) {
+  .project--single {
+    padding-top: 0;
+    padding-left: 80px;
+    height: 100%;
+  }
+}
+
+.project--single .project__main-image {
+  height: 240px;
+}
+
+@media (min-width: 660px) {
+  .project--single .project__main-image {
+    height: 450px;
+  }
+}
+
+@media (min-width: 1275px) {
+  .project--single .project__main-image {
+    height: 100%;
+  }
+}
+
 .project--single .project__caption {
   text-align: center;
   width: 100%;
@@ -2822,6 +2865,18 @@ body {
   bottom: 15px;
 }
 
+@media (min-width: 660px) {
+  .project--single .project__skills {
+    bottom: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  .project--single .project__skills {
+    bottom: 27px;
+  }
+}
+
 .project--single .project__skills li:first-child:before {
   content: "";
   padding: 0;
@@ -2832,17 +2887,52 @@ body {
   font-size: 11px;
 }
 
+@media (min-width: 660px) {
+  .project--single .project__skills li {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 900px) {
+  .project--single .project__skills li {
+    font-size: 17px;
+  }
+}
+
 .project--single .project__skills li:before {
   content: "/";
   padding: 0 14px;
 }
 
-.project__content {
+@media (min-width: 660px) {
+  .project--single .project__skills li:before {
+    padding: 0 25px;
+  }
+}
+
+@media (min-width: 900px) {
+  .project--single .project__skills li:before {
+    padding: 0 35px;
+  }
+}
+
+.project--single .project__content {
   padding: 0 20px 40px;
 }
 
-.project__content section {
-  margin: 40px 0;
+@media (min-width: 660px) {
+  .project--single .project__content {
+    padding: 0 30px 40px;
+  }
+}
+
+.project--single .project__content section {
+  margin: 40px auto;
+}
+
+.project--single .project__content section:first-child {
+  margin: 0 auto;
+  padding-top: 40px;
 }
 
 .text--important-skin-1 {
@@ -2851,8 +2941,32 @@ body {
   color: #f2cd62;
 }
 
+@media (min-width: 660px) {
+  .text--important-skin-1 {
+    font-size: 54px;
+  }
+}
+
+@media (min-width: 900px) {
+  .text--important-skin-1 {
+    font-size: 70px;
+  }
+}
+
 .text--paragraph-skin-1 {
   color: white;
+}
+
+@media (min-width: 660px) {
+  .text--paragraph-skin-1 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 900px) {
+  .text--paragraph-skin-1 {
+    font-size: 20px;
+  }
 }
 
 .text--block {
@@ -2865,6 +2979,12 @@ body {
 
 .text-content {
   text-align: center;
+}
+
+@media (min-width: 1275px) {
+  .text-content {
+    width: 700px;
+  }
 }
 
 .text-content h2 {
@@ -2884,4 +3004,10 @@ body {
 .image--wide img {
   width: 100%;
   vertical-align: top;
+}
+
+.image--cover {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }

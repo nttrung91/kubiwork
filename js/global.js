@@ -23,4 +23,16 @@ $menuLink.click(function() {
 });
 
 
+$(window).scroll(function() {
+  var windowHeight = $(window).height();
+  var bodyOffSet = window.pageYOffset;
+
+
+  if(bodyOffSet > windowHeight)
+    $(".nav-bar").addClass("newColor");
+  else
+    $(".nav-bar").removeClass("newColor");
+
+});
+
 

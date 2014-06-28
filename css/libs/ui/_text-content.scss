@@ -1,6 +1,10 @@
 .text-content{
   text-align: center;
 
+  @include bp(mama-bear){
+    width: 700px;
+  }
+
   h2{
     font-size: 28px;
   }
