@@ -2,123 +2,107 @@
  * MENU LINK eats HAMBURGER
  *****/
 
-/**
- * 1. Display block allows us to assign width and height
- * 2. Size of the Menu Link
- * 3. Icon stays top left relative to Nav-Bar
- * 4. Vertically center the icon relative to Nav-Bar
- * 5. Color after menu link is pressed
- * 6. Center the icon
- **/
-
-/** SCREEN-SIZE 2 NOTES
- * 1. Bigger Menu Link Icon for Bigger Screen
- * 2. Same as [2]
- * 3. Make the Menu-link icon bigger
- * 4. For the Menu-link on bigger screen, Width = Height
+/*
+ * 1. Menu Link locates top-left
  */
 
-.menu-link{
-  display: block; /* [1] */
-  width: $menu-link-size; /* [2] */
-  height: $menu-link-size; /* [2] */
+.menu-link {
+  display: block;
+  width: $menu-link-size;
+  height: $menu-link-size;
 
-  position: absolute; /* [3] */
-  top: 0;
-  left: 0;
+  position: absolute; /* [1] */
+  top: 0; /* [1] */
+  left: 0; /* [1] */
 
   transition: width 230ms ease-out, background 230ms ease-out;
-
   transform: translate3d(0,0,0);
 
-  /******************\
-   * Menu Link Size 2
-  \******************/
-  @include bp(teen-bear){
-    width: $menu-link-size2; /* [~~1] */
-    height: $menu-link-size2; /* [~~1] */
+  @include bp(teen-bear) {
+    width: $menu-link-size-2;
+    height: $menu-link-size-2;
 
-    &:hover{
+    &:hover {
       background: $menu-link-hover-color;
     }
   }
 }
 
-.hamburger-box{
-  position: relative;
-  top: 20px; /* [4] */
+/*
+ * 1. Push the Hamburger Icon down xx pixels to
+ *    vertically center it inside the Nav-bar
+ */
 
-  /*********************\
-   * Hamburger Box Size 2
-  \*********************/
+.hamburger-box {
+  position: relative;
+  top: 20px; /* [1] */
+
   @include bp(teen-bear){
-    top: 30px; /* [~~2] */
+    top: 30px;
   }
 }
 
 
-.hamburger-bun, .hamburger-patty{
+.hamburger-bun,
+.hamburger-patty {
   position: relative;
   display: block;
   width: 20px;
   height: 3px;
-  background: $hamburger-color;
-  margin: 0 auto 3px;
-  transition: all 230ms ease-in;
 
+  background: $hamburger-color;
+
+  margin: 0 auto 3px;
+
+  transition: all 230ms ease-in;
   transform: translate3d(0,0,0);
 
-  /******************\
-   * Bun & Patty Size 2
-  \******************/
-  @include bp(teen-bear){
-    width: 26px; /* [~~3] */
-    height: 4px; /* [~~3] */
-    margin: 0 auto 4px; /* [~~3] */
+  @include bp(teen-bear) {
+    width: 26px;
+    height: 4px;
+    margin: 0 auto 4px;
 
     transition: all 80ms linear;
   }
 }
 
 
-.menu-link.isActive{
+.menu-link.isActive {
   background: $menu-link-active-color;
-  text-align: center; /* [6] */
+  text-align: center;
   width: 100%;
 
-  /******************\
-   * Menu Link Size 2
-  \******************/
-  @include bp(teen-bear){
-    width: $menu-link-size2; /* [~~4] */
+  /*
+   * 1. When Menu-Link is pressed on bigger screen, Width = Height
+   */
+
+  @include bp(teen-bear) {
+    width: $menu-link-size-2; /* [1] */
     background: $menu-link-active-color-2;
   }
 
-  .hamburger-bun, .hamburber-patty{
-    background: $hamburger-active-color; /* [5] */
+  .hamburger-bun,
+  .hamburber-patty {
+    background: $hamburger-active-color;
   }
 
-  .hamburger-bun--top{
+  .hamburger-bun--top {
     top: 6px;
     transform: rotate(45deg);
 
-    /******************\
-     * Bun Top Size 2
-    \******************/
-    @include bp(teen-bear){
+    @include bp(teen-bear) {
       top: 10px;
     }
   }
 
-  .hamburger-patty{
+  .hamburger-patty {
     top: -1px;
     transform: rotate(45deg);
     opacity: 0;
   }
 
-  .hamburger-bun--btm{
+  .hamburger-bun--btm {
     bottom: 6px;
     transform: rotate(-45deg);
   }
-
 }

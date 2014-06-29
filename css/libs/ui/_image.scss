@@ -1,14 +1,19 @@
-.image--wide{
+/***********
+ * IMAGE
+ ***********/
+
+// Image expand as wide as its parent
+.image--wide {
   position: relative;
 
-  img{
+  img {
     width: 100%;
     vertical-align: top;
   }
 }
 
-
-.image--cover{
+// Image stretch to fit the container
+.image--cover {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

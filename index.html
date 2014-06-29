@@ -7,36 +7,19 @@
 
         <title>Home – Kubiwork – HTML5, CSS, OOCSS, front-end developer and mobile strategist</title>
 
-        <meta name="description" content="Portfolio site for Kubi">
-
+        <meta name="description" content="Kubi Personal Website | Resume | Project">
 
         <link rel="stylesheet" href="css/build/minified/global.css">
     </head>
 
     <body>
 
-      <!-- @#: Display the level of nested of each element -->
-
       <div class="site-wrap">
 
-        <!-- Site Header Architecture
-        **************************************************
-              1 Site Header
-                |- 2a: Navigation Bar
-                   |- 3a: Menu Link (Display the hidden menu)
-                   |- 3b: Badge (Logo)
-                   |- 3c: Social Networks
-                |- 2b: Navigation Menu
-        **************************************************
-        -->
-
-        <!-- @1 Site Header -->
         <header class="site-header">
 
-          <!-- @2a Navigation Bar -->
           <div class="nav-bar">
 
-            <!-- @3a Menu Link -->
             <a href="#menu" class="menu-link">
               <div class="hamburger-box">
                 <span class="hamburger-bun hamburger-bun--top"></span>
@@ -45,48 +28,45 @@
               </div>
             </a>
 
-            <!-- @3b Badge -->
-            <a href="#" class="kubi-badge">
+            <a href="#" class="kubi-badge kubi-badge--default">
               <span>K</span>
             </a>
 
-            <!-- @3c Social -->
-            <ul class="social-icons">
+            <!-- <ul class="social-icons">
               <li><a href="#">Facebook</a></li>
               <li><a href="#">Twitter</a></li>
               <li><a href="#">Dribbble</a></li>
-            </ul>
+            </ul> -->
 
           </div>
 
-          <!-- @2b Navigation Menu -->
           <div class="nav-menu">
-            <ul class="nav-skin-1 nav nav--stacked">
+            <ul class="nav nav--stacked site-nav">
               <li>
                 <a href="#">
-                  <span class="primary">About</span>
-                  <span class="secondary">Get to know me</span>
+                  <span>About</span>
+                  <span>Get to know me</span>
                 </a>
               </li>
 
               <li>
                 <a href="#">
-                  <span class="primary">Photography</span>
-                  <span class="secondary">Tell a story</span>
+                  <span>Photography</span>
+                  <span>Tell a story</span>
                 </a>
               </li>
 
               <li>
                 <a href="#">
-                  <span class="primary">Blog</span>
-                  <span class="secondary">Read my mind</span>
+                  <span>Blog</span>
+                  <span>Read my mind</span>
                 </a>
               </li>
 
               <li>
                 <a href="#">
-                  <span class="primary">Resources</span>
-                  <span class="secondary">Share the knowledge</span>
+                  <span>Resources</span>
+                  <span>Share the knowledge</span>
                 </a>
               </li>
 
@@ -95,28 +75,15 @@
 
         </header>
 
-
-        <!-- Projects Architecture
-        **************************************************
-              1 Projects
-                |- 2: Each Project
-                   |- 3: Link Wrap
-                      |- 4a: Logo of each project
-        **************************************************
-        -->
-
-        <!-- @1 Projects -->
         <section class="projects">
 
-          <!-- @2 Individual Project -->
-          <article class="project--showcase layout--default from100to50">
+          <article class="layout--default from100to50">
 
-            <!-- @3 Link Wrap -->
-            <a href="/project/pressa.html" class="kb-project-pressa curtain curtain--dark curtain--black full-block image--cover">
+            <a href="/project/pressa.html" class="kb-project-pressa curtain curtain--hover-default curtain--default blocky image--cover">
 
-              <span class="logo">
-                <span class="title">Pressa</span>
-                <span class="description">A web app designed for autistic children </span>
+              <span class="project__name">
+                <span>Pressa</span>
+                <span>A web app designed for autistic children </span>
               </span>
 
             </a>
@@ -124,11 +91,11 @@
           </article>
 
 
-          <article class="project--showcase layout--default from100to50">
+          <article class="layout--default from100to50">
 
-            <a href="#" class="kb-project-mrmarvelous curtain curtain--dark curtain--black full-block image--cover">
+            <a href="#" class="kb-project-mrmarvelous curtain curtain--hover-default curtain--default blocky image--cover">
 
-              <span class="logo">
+              <span class="project__name">
                 <span class="title">Mr. Marvelous</span>
                 <span class="description">Ebay Listing Template</span>
               </span>
@@ -137,11 +104,11 @@
 
           </article>
 
-          <article class="project--showcase layout--default from100to50">
+          <article class="layout--default from100to50">
 
-            <a href="#" class="kb-project-pressa curtain curtain--dark full-block curtain--black image--cover">
+            <a href="#" class="kb-project-pressa curtain curtain--hover-default blocky curtain--default image--cover">
 
-              <span class="logo">
+              <span class="project__name">
                 <span class="title">Pressa</span>
                 <span class="description">A web app designed for autistic children</span>
               </span>
@@ -151,11 +118,11 @@
           </article>
 
 
-          <article class="project--showcase layout--default from100to50">
+          <article class="layout--default from100to50">
 
-            <a href="#" class="kb-project-mrmarvelous curtain curtain--dark full-block curtain--black image--cover">
+            <a href="#" class="kb-project-mrmarvelous curtain curtain--hover-default blocky curtain--default image--cover">
 
-              <span class="logo">
+              <span class="project__name">
                 <span class="title">Mr. Marvelous</span>
                 <span class="description">Ebay Listing Template</span>
               </span>
@@ -165,11 +132,11 @@
           </article>
 
 
-          <article class="project--showcase layout--default from100to50">
+          <article class="layout--default from100to50">
 
-            <a href="#" class="kb-project-pressa curtain curtain--dark full-block curtain--black image--cover">
+            <a href="#" class="kb-project-pressa curtain curtain--hover-default blocky curtain--default image--cover">
 
-              <span class="logo">
+              <span class="project__name">
                 <span class="title textShadow">Pressa</span>
                 <span class="description textShadow">A web app designed for autistic children</span>
               </span>
@@ -178,11 +145,11 @@
 
           </article>
 
-          <article class="project--showcase layout--default from100to50">
+          <article class="layout--default from100to50">
 
-            <a href="#" class="kb-project-pressa curtain curtain--dark full-block curtain--black image--cover">
+            <a href="#" class="kb-project-pressa curtain curtain--hover-default blocky curtain--default image--cover">
 
-              <span class="logo">
+              <span class="project__name">
                 <span class="title textShadow">Pressa</span>
                 <span class="description textShadow">A web app designed for autistic children</span>
               </span>

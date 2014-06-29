@@ -2,18 +2,18 @@
  * SITE-WRAP
  *****/
 
-/**
- * 1. Contraint the height to be as tall as the browser's height
- * 2. Anything outside of the height region will be hidden
- **/
-
- .site-wrap{
-  @include bp(mama-bear){
+ .site-wrap {
+  @include bp(mama-bear) {
     height: 100%;
   }
  }
 
- .site-wrap.isActive{
+ /**
+  * 1. Contraint the height to be as tall as the browser's height
+  * 2. Anything outside of the height region will be hidden
+  **/
+
+ .site-wrap.isActive {
   height: 100%; /* [1] */
   overflow: hidden; /* [2] */
  }

@@ -1,0 +1,151 @@
+/**********
+ * PROJECT
+ *
+ * Used TEXT-CONTENT to style the text in the body
+ **********/
+
+ /*
+  * 1. [Hack] Make the main image stretch the whole screen
+  */
+
+.project-wrap {
+  padding-top: $nav-bar-height;
+
+  @include bp(teen-bear) {
+    padding-top: 0;
+    padding-left: $nav-bar-width;
+    height: 100%; /* [1] */
+  }
+
+  .project__main-image {
+    height: 240px;
+
+    @include bp(baby-bear) {
+      height: 450px;
+    }
+
+    @include bp(mama-bear) {
+      height: 100%;
+    }
+  }
+
+  .project__caption {
+    text-align: center;
+    width: 100%;
+
+    // Project Name
+    > span:nth-child(1) {
+      display: block;
+
+      font-size: 36px;
+      font-weight: bold;
+      color: $lightYellow;
+
+      @include bp(baby-bear) {
+        font-size:54px;
+      }
+
+      @include bp(teen-bear) {
+        font-size: 70px;
+      }
+
+      @include bp(mama-bear) {
+        font-size: 120px;
+      }
+    }
+
+
+    // Project Tagline
+    > span:nth-child(2) {
+      color: $white;
+
+      @include bp(baby-bear){
+        font-size: 18px;
+      }
+
+      @include bp(teen-bear){
+        font-size: 20px;
+      }
+
+      @include bp(mama-bear){
+        font-size: 30px;
+      }
+    }
+  }
+
+  .project__skills {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    color: $white;
+    text-align: center;
+
+    @include bp(baby-bear) {
+      bottom: 20px;
+    }
+
+    @include bp(teen-bear) {
+      bottom: 27px;
+    }
+
+    li:first-child {
+      &:before{
+        content:"";
+        padding: 0;
+      }
+    }
+
+    li {
+      text-transform: uppercase;
+      font-size: 11px;
+
+      @include bp(baby-bear) {
+        font-size: 14px;
+      }
+
+      @include bp(teen-bear) {
+        font-size: 17px;
+      }
+
+      @include bp(teen-bear) {
+        font-size: 20px;
+      }
+
+      &:before {
+        content:"/";
+        padding: 0 14px;
+
+        @include bp(baby-bear) {
+          padding: 0 25px;
+        }
+
+        @include bp(teen-bear) {
+          padding: 0 35px;
+        }
+
+        @include bp(mama-bear) {
+          padding: 0 45px;
+        }
+      }
+    }
+  }
+
+  .project__content {
+    padding: 0 20px 40px;
+
+    @include bp(baby-bear) {
+      padding: 0 30px 40px;
+    }
+
+    section {
+      margin: 40px auto;
+
+      &:first-child {
+        margin: 0 auto;
+        padding-top: 40px;
+      }
+    }
+  }
+}
+
+

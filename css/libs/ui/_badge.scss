@@ -8,15 +8,11 @@
  * 3. Align center the text inside
  **/
 
-/** SCREEN-SIZE 2 NOTES
- *
- */
-
-.kubi-badge{
+.kubi-badge {
   display: block;
 
-  height: $badge-size;
   width: $badge-size;
+  height: $badge-size;
   line-height: $badge-size; /* [1] */
 
   position: absolute; /* [2] */
@@ -25,39 +21,36 @@
 
   text-align: center; /* [3] */
 
-  /****************\
-   * Badge Size 2
-  \****************/
-  @include bp(teen-bear){
-    height: $badge-size2;
-    width: $badge-size2;
-    line-height: $badge-size2;
+  @include bp(teen-bear) {
+    height: $badge-size-2;
+    width: $badge-size-2;
+    line-height: $badge-size-2;
 
-    left: 0;
-    margin-left: 0;
-    bottom: 0;
+    /*
+     * 1. Re-position the Badge on bigger screen (bottom left)
+     */
+
+    left: 0; /* [1] */
+    margin-left: 0; /* [1] */
+    bottom: 0; /* [1] */
   }
+}
 
-  > span{
+.kubi-badge--default {
+  > span {
     font-size: 28px;
     color: $badge-color;
 
-    /****************\
-     * Badge Text Size 2
-    \****************/
-    @include bp(teen-bear){
+    @include bp(teen-bear) {
       font-size: 32px;
     }
   }
 }
 
-.kubi-badge.isActive{
+.kubi-badge.isActive {
   display: none;
 
-  /********************\
-   * Badge Active Size 2
-  \********************/
-  @include bp(teen-bear){
+  @include bp(teen-bear) {
     display: block;
   }
 }

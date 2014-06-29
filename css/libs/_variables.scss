@@ -157,29 +157,33 @@ $use-nav: true;
 $theme-color: $blue;
 $nav-bar-content-color: $white;
 
+
 // nav-bar
 $nav-bar-height: 55px; // small screen
 $nav-bar-width: 80px; // larger screen
-// $nav-bar-bgColor: #2C9FC8; // small screen
-// $nav-bar-bgColor: #6FB7F3; // small screen
 $nav-bar-bgColor: darken($black,5%);
 $nav-bar-bgColor-2: #333;
 
 
+// nav-menu
+$nav-menu-bgColor: $black;
+
+
 // menu-link
 $menu-link-size: $nav-bar-height; // small screen
-$menu-link-size2: $nav-bar-width; // big screen
-
+$menu-link-size-2: $nav-bar-width; // big screen
 $menu-link-active-color: $white; // small screen
 $menu-link-active-color-2: $white;
 $menu-link-hover-color: lighten($black,4%);
+
 
 // hamburger
 $hamburger-color: $nav-bar-content-color;
 $hamburger-active-color: $black;
 $hamburger-active-color-2: $darkOrange;
 
+
 // badge
 $badge-size: $nav-bar-height;
-$badge-size2: $nav-bar-width;
+$badge-size-2: $nav-bar-width;
 $badge-color: $nav-bar-content-color;

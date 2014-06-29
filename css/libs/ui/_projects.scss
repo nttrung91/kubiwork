@@ -2,27 +2,122 @@
  * PROJECTS
  *****/
 
-/**
+/*
  * 1. Move the projects section down "xx" pixels
- **/
-
-/** SCREEN-SIZE 2 NOTES
- *
  */
 
-.projects{
+.projects {
   position: relative; /* [1] */
   top: $nav-bar-height; /* [1] */
   background: #111;
 
-  /******************\
-   * Projects Size 2
-  \******************/
-  @include bp(teen-bear){
+  @include bp(teen-bear) {
     top: 0;
     padding-left: $nav-bar-width;
   }
+
+  // Each project
+  article {
+    height: 180px;
+
+    @include bp(baby-bear) {
+      height: 300px;
+    }
+
+    @include bp(teen-bear) {
+      height: 240px;
+    }
+
+    @include bp(mama-bear) {
+      height: 300px;
+    }
+
+    > a {
+      position: relative;
+      overflow: hidden;
+      transition: transform 200ms cubic-bezier(.58,-1,.54,2);
+      transform: translate3d(0,0,0);
+
+      &:hover {
+        transform: scale(0.95);
+
+        @include bp(mama-bear) {
+          transform: scale(0.95);
+        }
+
+        > .project__name {
+           > span:nth-child(1) {
+            color: $lightYellow;
+          }
+        }
+      }
+    }
+  }
 }
 
+/*
+ * 1. Project's name stays on top of the curtain.
+ *    Curtain's z-index is 1
+ */
 
+.project__name {
+  display: block;
+  position: relative;
+  top: 52px;
+  z-index: 2; /* [1] */
+
+  @include bp(baby-bear) {
+    top: 90px;
+  }
+
+  @include bp(teen-bear) {
+    top: 75px;
+  }
+
+  @include bp(mama-bear) {
+    top: 100px;
+  }
+
+    // Project title
+  > span:nth-child(1) {
+    display: block;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: color 200ms ease-out;
+
+    @include bp(baby-bear) {
+      font-size: 45px;
+    }
+
+    @include bp(teen-bear) {
+      font-size: 36px;
+    }
+  }
+
+    // Project subtitle
+  > span:nth-child(2) {
+    color: white;
+
+    @include bp(baby-bear) {
+      font-size: 17px;
+    }
+
+    @include bp(teen-bear) {
+      font-size: 15px;
+    }
+  }
+}
+
+/*
+ * List of project images
+ */
+
+.kb-project-pressa {
+  background-image: url("/images/p1.jpg");
+}
+
+.kb-project-mrmarvelous {
+  background-image: url("/images/p2.jpg");
+}
 

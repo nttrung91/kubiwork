@@ -1409,7 +1409,7 @@ button {
  * 1. See through the content of the element below it
  * 2. Position the Curtain to stay on top or below certain element
  **/
-.curtain--dark:hover:before {
+.curtain--hover-default:hover:before {
   background: black;
   opacity: 0.6;
   /* [1] */
@@ -1419,17 +1419,15 @@ button {
 
 .curtain--animate {
   transition: background 200ms ease-out, opacity 200ms ease-out;
-  /* [3] */
   transform: translate3d(0, 0, 0);
-  /* [4] */
 }
 
-.curtain--black:before {
+.curtain--default:before {
   background: #3a3d42;
   opacity: 0.4;
 }
 
-.curtain--superBlack:before {
+.curtain--skin-1:before {
   background: #111;
   opacity: 0.7;
 }
@@ -1803,16 +1801,16 @@ html, body {
 /*****
  * SITE-WRAP
  *****/
-/**
- * 1. Contraint the height to be as tall as the browser's height
- * 2. Anything outside of the height region will be hidden
- **/
 @media (min-width: 1275px) {
   .site-wrap {
     height: 100%;
   }
 }
 
+/**
+ * 1. Contraint the height to be as tall as the browser's height
+ * 2. Anything outside of the height region will be hidden
+ **/
 .site-wrap.isActive {
   height: 100%;
   /* [1] */
@@ -1848,7 +1846,12 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-.full-block {
+/***********
+ * BLOCKY
+ *
+ * Disc: Turn an element into a big block
+ ***********/
+.blocky {
   display: block;
   height: 100%;
   width: 100%;
@@ -1858,14 +1861,11 @@ html, body {
 /***********
  * NAV BAR
  ***********/
-/**
+/*
  * 1. Fixed Nav on top
  * 2. Stretch the container to 100% Screensize
  * 3. Stay on top of Nav Menu (Nav Menu has z-index of 1)
  * 4. Add see-through effect
- **/
-/** SCREEN-SIZE 2 NOTES
- * 1. Flip the nav bar vertically
  */
 .nav-bar {
   position: fixed;
@@ -1879,20 +1879,24 @@ html, body {
   opacity: 0.96;
   /* [4] */
   transition: background 200ms linear;
-  /****************\
-   * Nav-bar Size 2
-  \****************/
+  /*
+   * 1. Flip the bar vertically
+   */
 }
 @media (min-width: 900px) {
   .nav-bar {
     height: 100%;
-    /* [~~1] */
+    /* [1] */
     width: 80px;
-    /* [~~1] */
+    /* [1] */
     opacity: 1;
   }
 }
 
+/*
+ * Use with Javascript to change the nav bar color when user scrolls down to
+ * certain part of the page
+ */
 .newColor {
   background: #6fb7f3;
 }
@@ -1906,65 +1910,49 @@ html, body {
 /*****
  * MENU LINK eats HAMBURGER
  *****/
-/**
- * 1. Display block allows us to assign width and height
- * 2. Size of the Menu Link
- * 3. Icon stays top left relative to Nav-Bar
- * 4. Vertically center the icon relative to Nav-Bar
- * 5. Color after menu link is pressed
- * 6. Center the icon
- **/
-/** SCREEN-SIZE 2 NOTES
- * 1. Bigger Menu Link Icon for Bigger Screen
- * 2. Same as [2]
- * 3. Make the Menu-link icon bigger
- * 4. For the Menu-link on bigger screen, Width = Height
+/*
+ * 1. Menu Link locates top-left
  */
 .menu-link {
   display: block;
-  /* [1] */
   width: 55px;
-  /* [2] */
   height: 55px;
-  /* [2] */
   position: absolute;
-  /* [3] */
+  /* [1] */
   top: 0;
+  /* [1] */
   left: 0;
+  /* [1] */
   transition: width 230ms ease-out, background 230ms ease-out;
   transform: translate3d(0, 0, 0);
-  /******************\
-   * Menu Link Size 2
-  \******************/
 }
 @media (min-width: 900px) {
   .menu-link {
     width: 80px;
-    /* [~~1] */
     height: 80px;
-    /* [~~1] */
   }
   .menu-link:hover {
     background: #44474d;
   }
 }
 
+/*
+ * 1. Push the Hamburger Icon down xx pixels to
+ *    vertically center it inside the Nav-bar
+ */
 .hamburger-box {
   position: relative;
   top: 20px;
-  /* [4] */
-  /*********************\
-   * Hamburger Box Size 2
-  \*********************/
+  /* [1] */
 }
 @media (min-width: 900px) {
   .hamburger-box {
     top: 30px;
-    /* [~~2] */
   }
 }
 
-.hamburger-bun, .hamburger-patty {
+.hamburger-bun,
+.hamburger-patty {
   position: relative;
   display: block;
   width: 20px;
@@ -1973,18 +1961,13 @@ html, body {
   margin: 0 auto 3px;
   transition: all 230ms ease-in;
   transform: translate3d(0, 0, 0);
-  /******************\
-   * Bun & Patty Size 2
-  \******************/
 }
 @media (min-width: 900px) {
-  .hamburger-bun, .hamburger-patty {
+  .hamburger-bun,
+  .hamburger-patty {
     width: 26px;
-    /* [~~3] */
     height: 4px;
-    /* [~~3] */
     margin: 0 auto 4px;
-    /* [~~3] */
     transition: all 80ms linear;
   }
 }
@@ -1992,29 +1975,25 @@ html, body {
 .menu-link.isActive {
   background: #f0f1f5;
   text-align: center;
-  /* [6] */
   width: 100%;
-  /******************\
-   * Menu Link Size 2
-  \******************/
+  /*
+   * 1. When Menu-Link is pressed on bigger screen, Width = Height
+   */
 }
 @media (min-width: 900px) {
   .menu-link.isActive {
     width: 80px;
-    /* [~~4] */
+    /* [1] */
     background: #f0f1f5;
   }
 }
-.menu-link.isActive .hamburger-bun, .menu-link.isActive .hamburber-patty {
+.menu-link.isActive .hamburger-bun,
+.menu-link.isActive .hamburber-patty {
   background: #3a3d42;
-  /* [5] */
 }
 .menu-link.isActive .hamburger-bun--top {
   top: 6px;
   transform: rotate(45deg);
-  /******************\
-   * Bun Top Size 2
-  \******************/
 }
 @media (min-width: 900px) {
   .menu-link.isActive .hamburger-bun--top {
@@ -2039,13 +2018,10 @@ html, body {
  * 2. Not the best way but fastest way to horizontally center absolute element inside a container. The margin-left aligns the element back to middle.
  * 3. Align center the text inside
  **/
-/** SCREEN-SIZE 2 NOTES
- *
- */
 .kubi-badge {
   display: block;
-  height: 55px;
   width: 55px;
+  height: 55px;
   line-height: 55px;
   /* [1] */
   position: absolute;
@@ -2056,38 +2032,36 @@ html, body {
   /* [2] */
   text-align: center;
   /* [3] */
-  /****************\
-   * Badge Size 2
-  \****************/
 }
 @media (min-width: 900px) {
   .kubi-badge {
     height: 80px;
     width: 80px;
     line-height: 80px;
+    /*
+     * 1. Re-position the Badge on bigger screen (bottom left)
+     */
     left: 0;
+    /* [1] */
     margin-left: 0;
+    /* [1] */
     bottom: 0;
+    /* [1] */
   }
 }
-.kubi-badge > span {
+
+.kubi-badge--default > span {
   font-size: 28px;
   color: #f0f1f5;
-  /****************\
-   * Badge Text Size 2
-  \****************/
 }
 @media (min-width: 900px) {
-  .kubi-badge > span {
+  .kubi-badge--default > span {
     font-size: 32px;
   }
 }
 
 .kubi-badge.isActive {
   display: none;
-  /********************\
-   * Badge Active Size 2
-  \********************/
 }
 @media (min-width: 900px) {
   .kubi-badge.isActive {
@@ -2107,23 +2081,12 @@ html, body {
 
 /***********
  * NAV MENU
+ *
+ * Parent of SITE-NAV
  ***********/
-/**
- * 1. In order to make the menu to stretch as big as the browser, the menu needs to start at 0 position.
- * 2. Move the menu xx pixels down
- * 3. Make the menu stays under the Nav Bar
- * 4. Make sure Javascript is turned on
- * 5. Originally hide the menu
- * 6. Create the fade-in/out effect
- * 7. Show the menu and stretch the height to fit the browser's height
- * 8. The container is scrollable when the content exceeds the screen's 100% height
- * 9. Create a default state for animation (See 11)
- * 10. Create the fade-in animation one-by-one of each navigation item
- * 11. End state of the animation from Point 9
- * 12. One follow after another animation
- **/
-/** SCREEN-SIZE 2 NOTES
- * 1. The menu starts at xx pixels instead of 0
+/*
+ * 1. Menu is fixed top
+ * 2. Menu is under Nav Bar
  */
 .nav-menu {
   position: fixed;
@@ -2131,178 +2094,182 @@ html, body {
   top: 0;
   /* [1] */
   z-index: 100;
-  /* [3] */
-  /******************\
-   * Nav Menu Size 2
-  \******************/
+  /* [2] */
+  /*
+   * 1. Menu moves xx pixels to the right
+   */
 }
 @media (min-width: 900px) {
   .nav-menu {
     padding-left: 80px;
-    /* [~~1] */
+    /* [1] */
   }
-}
-.nav-menu ul {
-  margin-top: 60px;
-  /* [2] */
-}
-@media (min-width: 660px) {
-  .nav-menu ul {
-    margin-top: 90px;
-  }
-}
-@media (min-width: 900px) {
-  .nav-menu ul {
-    margin-top: 30px;
-  }
-}
-.nav-menu ul li {
-  position: relative;
-  /* [9] */
-  top: 0;
-  /* [9] */
-  opacity: 0;
-  /* [9] */
 }
 
+/*
+ * 1. Hide the Nav Menu only when Javascript is turned on
+ * 2. Originally hide the menu
+ */
 .js .nav-menu {
-  /* [4] */
+  /* [1] */
   max-height: 0;
-  /* [5] */
+  /* [2] */
   overflow: hidden;
-  /* [5] */
+  /* [2] */
   opacity: 0;
-  /* [6] */
   transition: opacity 200ms ease-in;
-  /* [6] */
 }
 
+/*
+ * 1. When active, Menu's height = Browser's height
+ * 2. Overflow content is scrollable
+ */
 .nav-menu.isActive {
   height: 100%;
-  /* [7] */
+  /* [1] */
   max-height: 100%;
-  /* [7] */
+  /* [1] */
   opacity: 1;
-  /* [6] */
   width: 100%;
   background: #3a3d42;
   overflow: scroll;
-  /* [8] */
+  /* [2] */
+  /* Waterfall Animation */
 }
-.nav-menu.isActive ul li {
-  /* [10] */
+.nav-menu.isActive .site-nav {
+  /*
+   * 1. Waterfall Animation: End State
+   */
+  /*
+   * Go through each list and apply a transition delay to create
+   * the Waterfall Animation
+   */
+}
+.nav-menu.isActive .site-nav > li {
   position: relative;
-  /* [11] */
+  /* [1] */
   top: 10px;
-  /* [11] */
+  /* [1] */
   opacity: 1;
-  /* [11] */
+  /* [1] */
   transition: top 200ms ease-in, opacity 200ms ease-in;
 }
-.nav-menu.isActive ul li:nth-child(1) {
+.nav-menu.isActive .site-nav li:nth-child(1) {
   transition-delay: 160ms;
-  /* [12] */
 }
 @media (min-width: 900px) {
-  .nav-menu.isActive ul li:nth-child(1) {
+  .nav-menu.isActive .site-nav li:nth-child(1) {
     transition-delay: 220ms;
   }
 }
-.nav-menu.isActive ul li:nth-child(2) {
+.nav-menu.isActive .site-nav li:nth-child(2) {
   transition-delay: 180ms;
-  /* [12] */
 }
 @media (min-width: 900px) {
-  .nav-menu.isActive ul li:nth-child(2) {
+  .nav-menu.isActive .site-nav li:nth-child(2) {
     transition-delay: 260ms;
   }
 }
-.nav-menu.isActive ul li:nth-child(3) {
+.nav-menu.isActive .site-nav li:nth-child(3) {
   transition-delay: 200ms;
-  /* [12] */
 }
 @media (min-width: 900px) {
-  .nav-menu.isActive ul li:nth-child(3) {
+  .nav-menu.isActive .site-nav li:nth-child(3) {
     transition-delay: 300ms;
   }
 }
-.nav-menu.isActive ul li:nth-child(4) {
+.nav-menu.isActive .site-nav li:nth-child(4) {
   transition-delay: 220ms;
-  /* [12] */
 }
 @media (min-width: 900px) {
-  .nav-menu.isActive ul li:nth-child(4) {
+  .nav-menu.isActive .site-nav li:nth-child(4) {
     transition-delay: 340ms;
   }
 }
 
 /***********
- * NAV SKIN
+ * SITE NAV
+ *
+ * Children of NAV-MENU
  ***********/
 /*
- * 1. Remove gap between lists
- * 2. Increase the height of the button
- * 3. Each has seperate line
+ * 1. Move the menu xx pixels down below Nav Bar
  */
-/** SCREEN-SIZE 2 NOTES
- * 1. All lists are pushed both top and bot, except for the first one
- * 2. Left-align texts and push the texts xx pixels left
- */
-.nav-skin-1 {
+.site-nav {
   width: 100%;
+  margin-top: 60px;
+  /* [1] */
+  /*
+   * 1. Remove gap between lists
+   * 2. Waterfall Animation: Default State
+   */
 }
-.nav-skin-1 > li {
+@media (min-width: 660px) {
+  .site-nav {
+    margin-top: 90px;
+  }
+}
+@media (min-width: 900px) {
+  .site-nav {
+    margin-top: 30px;
+  }
+}
+.site-nav > li {
   margin: 0;
   /* [1] */
   width: 100%;
+  position: relative;
+  /* [2] */
+  top: 0;
+  /* [2] */
+  opacity: 0;
+  /* [2] */
 }
 @media (min-width: 900px) {
-  .nav-skin-1 > li {
+  .site-nav > li {
     margin: 5px 0;
+    /*
+     * 1. All lists are pushed both top and bot, except for the first one
+     */
   }
-  .nav-skin-1 > li:first-child {
+  .site-nav > li:first-child {
     margin-top: 0;
-    /* [~~1] */
+    /* [1] */
   }
 }
-.nav-skin-1 > li > a {
+.site-nav > li > a {
   display: block;
   padding: 10px 0;
-  /* [2] */
   text-align: center;
 }
 @media (min-width: 900px) {
-  .nav-skin-1 > li > a {
+  .site-nav > li > a {
     text-align: left;
-    /* [~~2] */
     padding-left: 70px;
-    /* [~~2] */
   }
 }
-.nav-skin-1 > li > a:hover .primary {
+.site-nav > li > a:hover .primary {
   color: white;
 }
-.nav-skin-1 > li > a .primary {
+.site-nav > li > a > span:nth-child(1) {
   display: block;
-  /* [3] */
   font-size: 36px;
   color: #CED1D9;
   transition: color 200ms linear;
 }
 @media (min-width: 900px) {
-  .nav-skin-1 > li > a .primary {
+  .site-nav > li > a > span:nth-child(1) {
     font-size: 56px;
   }
 }
-.nav-skin-1 > li > a .secondary {
+.site-nav > li > a > span:nth-child(2) {
   display: block;
-  /* [3] */
   font-size: 11px;
-  color: #81858F;
+  color: #81858f;
   text-transform: uppercase;
 }
 @media (min-width: 900px) {
-  .nav-skin-1 > li > a .secondary {
+  .site-nav > li > a > span:nth-child(2) {
     font-size: 14px;
   }
 }
@@ -2310,11 +2277,8 @@ html, body {
 /*****
  * PROJECTS
  *****/
-/**
+/*
  * 1. Move the projects section down "xx" pixels
- **/
-/** SCREEN-SIZE 2 NOTES
- *
  */
 .projects {
   position: relative;
@@ -2322,9 +2286,6 @@ html, body {
   top: 55px;
   /* [1] */
   background: #111;
-  /******************\
-   * Projects Size 2
-  \******************/
 }
 @media (min-width: 900px) {
   .projects {
@@ -2332,79 +2293,69 @@ html, body {
     padding-left: 80px;
   }
 }
-
-/*****
- * EACH PROJECT
- *****/
-/**
- * 1. Project will stretch full-screen
- * 2. Center the texts
- * 3. The height of each project container is 200px
- * 4. Contents that stretch beyond this height will be hidden
- * 5. Allow the elements inside the link to position corresponded to the link
- * 6. Make the whole area clickable
- * 7. Control the background styling for all images
- * 8. Link hover animation
- * 9. Stay on top of the curtain
- * 10. Resize the image to smaller size
- **/
-/** SCREEN-SIZE 2 NOTES
- *
- */
-.project--showcase {
+.projects article {
   height: 180px;
-  /* [3] */
 }
 @media (min-width: 660px) {
-  .project--showcase {
+  .projects article {
     height: 300px;
   }
 }
 @media (min-width: 900px) {
-  .project--showcase {
+  .projects article {
     height: 240px;
   }
 }
 @media (min-width: 1275px) {
-  .project--showcase {
+  .projects article {
     height: 300px;
   }
 }
-.project--showcase > a {
+.projects article > a {
   position: relative;
-  /* [5] */
-  transition: transform 200ms cubic-bezier(0.58, -1, 0.54, 2);
-  /* [8] */
-  transform: translate3d(0, 0, 0);
   overflow: hidden;
-  /* HOVER ON LINK */
+  transition: transform 200ms cubic-bezier(0.58, -1, 0.54, 2);
+  transform: translate3d(0, 0, 0);
 }
-.project--showcase > a > .logo {
+.projects article > a:hover {
+  transform: scale(0.95);
+}
+@media (min-width: 1275px) {
+  .projects article > a:hover {
+    transform: scale(0.95);
+  }
+}
+.projects article > a:hover > .project__name > span:nth-child(1) {
+  color: #f2cd62;
+}
+
+/*
+ * 1. Project's name stays on top of the curtain.
+ *    Curtain's z-index is 1
+ */
+.project__name {
   display: block;
   position: relative;
   top: 52px;
   z-index: 2;
-  /* [9] */
-  /****************\
-   * Logo Size 2
-  \****************/
+  /* [1] */
 }
 @media (min-width: 660px) {
-  .project--showcase > a > .logo {
+  .project__name {
     top: 90px;
   }
 }
 @media (min-width: 900px) {
-  .project--showcase > a > .logo {
+  .project__name {
     top: 75px;
   }
 }
 @media (min-width: 1275px) {
-  .project--showcase > a > .logo {
+  .project__name {
     top: 100px;
   }
 }
-.project--showcase > a > .logo .title {
+.project__name > span:nth-child(1) {
   display: block;
   color: white;
   font-weight: bold;
@@ -2412,39 +2363,27 @@ html, body {
   transition: color 200ms ease-out;
 }
 @media (min-width: 660px) {
-  .project--showcase > a > .logo .title {
+  .project__name > span:nth-child(1) {
     font-size: 45px;
   }
 }
 @media (min-width: 900px) {
-  .project--showcase > a > .logo .title {
+  .project__name > span:nth-child(1) {
     font-size: 36px;
   }
 }
-.project--showcase > a > .logo .description {
+.project__name > span:nth-child(2) {
   color: white;
 }
 @media (min-width: 660px) {
-  .project--showcase > a > .logo .description {
+  .project__name > span:nth-child(2) {
     font-size: 17px;
   }
 }
 @media (min-width: 900px) {
-  .project--showcase > a > .logo .description {
+  .project__name > span:nth-child(2) {
     font-size: 15px;
   }
-}
-.project--showcase > a:hover {
-  transform: scale(0.95);
-  /* [10] */
-}
-@media (min-width: 1275px) {
-  .project--showcase > a:hover {
-    transform: scale(0.95);
-  }
-}
-.project--showcase > a:hover > .logo .title {
-  color: #f2cd62;
 }
 
 /*
@@ -2458,146 +2397,154 @@ html, body {
   background-image: url("/images/p2.jpg");
 }
 
-.project--single {
+/**********
+ * PROJECT
+ *
+ * Used TEXT-CONTENT to style the text in the body
+ **********/
+/*
+ * 1. [Hack] Make the main image stretch the whole screen
+ */
+.project-wrap {
   padding-top: 55px;
 }
 @media (min-width: 900px) {
-  .project--single {
+  .project-wrap {
     padding-top: 0;
     padding-left: 80px;
     height: 100%;
+    /* [1] */
   }
 }
-.project--single .project__main-image {
+.project-wrap .project__main-image {
   height: 240px;
 }
 @media (min-width: 660px) {
-  .project--single .project__main-image {
+  .project-wrap .project__main-image {
     height: 450px;
   }
 }
 @media (min-width: 1275px) {
-  .project--single .project__main-image {
+  .project-wrap .project__main-image {
     height: 100%;
   }
 }
-.project--single .project__caption {
+.project-wrap .project__caption {
   text-align: center;
   width: 100%;
 }
-.project--single .project__skills {
-  color: #f0f1f5;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: 15px;
-}
-@media (min-width: 660px) {
-  .project--single .project__skills {
-    bottom: 20px;
-  }
-}
-@media (min-width: 900px) {
-  .project--single .project__skills {
-    bottom: 27px;
-  }
-}
-.project--single .project__skills li:first-child:before {
-  content: "";
-  padding: 0;
-}
-.project--single .project__skills li {
-  text-transform: uppercase;
-  font-size: 11px;
-}
-@media (min-width: 660px) {
-  .project--single .project__skills li {
-    font-size: 14px;
-  }
-}
-@media (min-width: 900px) {
-  .project--single .project__skills li {
-    font-size: 17px;
-  }
-}
-@media (min-width: 900px) {
-  .project--single .project__skills li {
-    font-size: 20px;
-  }
-}
-.project--single .project__skills li:before {
-  content: "/";
-  padding: 0 14px;
-}
-@media (min-width: 660px) {
-  .project--single .project__skills li:before {
-    padding: 0 25px;
-  }
-}
-@media (min-width: 900px) {
-  .project--single .project__skills li:before {
-    padding: 0 35px;
-  }
-}
-@media (min-width: 1275px) {
-  .project--single .project__skills li:before {
-    padding: 0 45px;
-  }
-}
-.project--single .project__content {
-  padding: 0 20px 40px;
-}
-@media (min-width: 660px) {
-  .project--single .project__content {
-    padding: 0 30px 40px;
-  }
-}
-.project--single .project__content section {
-  margin: 40px auto;
-}
-.project--single .project__content section:first-child {
-  margin: 0 auto;
-  padding-top: 40px;
-}
-
-.text--important-skin-1 {
+.project-wrap .project__caption > span:nth-child(1) {
+  display: block;
   font-size: 36px;
   font-weight: bold;
   color: #f2cd62;
 }
 @media (min-width: 660px) {
-  .text--important-skin-1 {
+  .project-wrap .project__caption > span:nth-child(1) {
     font-size: 54px;
   }
 }
 @media (min-width: 900px) {
-  .text--important-skin-1 {
+  .project-wrap .project__caption > span:nth-child(1) {
     font-size: 70px;
   }
 }
 @media (min-width: 1275px) {
-  .text--important-skin-1 {
+  .project-wrap .project__caption > span:nth-child(1) {
     font-size: 120px;
   }
 }
-
-.text--paragraph-skin-1 {
+.project-wrap .project__caption > span:nth-child(2) {
   color: #f0f1f5;
 }
 @media (min-width: 660px) {
-  .text--paragraph-skin-1 {
+  .project-wrap .project__caption > span:nth-child(2) {
     font-size: 18px;
   }
 }
 @media (min-width: 900px) {
-  .text--paragraph-skin-1 {
+  .project-wrap .project__caption > span:nth-child(2) {
     font-size: 20px;
   }
 }
 @media (min-width: 1275px) {
-  .text--paragraph-skin-1 {
+  .project-wrap .project__caption > span:nth-child(2) {
     font-size: 30px;
   }
+}
+.project-wrap .project__skills {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  color: #f0f1f5;
+  text-align: center;
+}
+@media (min-width: 660px) {
+  .project-wrap .project__skills {
+    bottom: 20px;
+  }
+}
+@media (min-width: 900px) {
+  .project-wrap .project__skills {
+    bottom: 27px;
+  }
+}
+.project-wrap .project__skills li:first-child:before {
+  content: "";
+  padding: 0;
+}
+.project-wrap .project__skills li {
+  text-transform: uppercase;
+  font-size: 11px;
+}
+@media (min-width: 660px) {
+  .project-wrap .project__skills li {
+    font-size: 14px;
+  }
+}
+@media (min-width: 900px) {
+  .project-wrap .project__skills li {
+    font-size: 17px;
+  }
+}
+@media (min-width: 900px) {
+  .project-wrap .project__skills li {
+    font-size: 20px;
+  }
+}
+.project-wrap .project__skills li:before {
+  content: "/";
+  padding: 0 14px;
+}
+@media (min-width: 660px) {
+  .project-wrap .project__skills li:before {
+    padding: 0 25px;
+  }
+}
+@media (min-width: 900px) {
+  .project-wrap .project__skills li:before {
+    padding: 0 35px;
+  }
+}
+@media (min-width: 1275px) {
+  .project-wrap .project__skills li:before {
+    padding: 0 45px;
+  }
+}
+.project-wrap .project__content {
+  padding: 0 20px 40px;
+}
+@media (min-width: 660px) {
+  .project-wrap .project__content {
+    padding: 0 30px 40px;
+  }
+}
+.project-wrap .project__content section {
+  margin: 40px auto;
+}
+.project-wrap .project__content section:first-child {
+  margin: 0 auto;
+  padding-top: 40px;
 }
 
 .text--block {
@@ -2608,6 +2555,11 @@ html, body {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
+/***************
+ * TEXT CONTENT
+ *
+ * Used in Project Page
+ **************/
 .text-content {
   text-align: center;
 }
@@ -2623,7 +2575,7 @@ html, body {
 }
 .text-content h2 {
   font-size: 28px;
-  color: #3A3D42;
+  color: #3a3d42;
 }
 @media (min-width: 900px) {
   .text-content h2 {
@@ -2637,7 +2589,7 @@ html, body {
 }
 .text-content p {
   line-height: 1.9;
-  color: #81858F;
+  color: #81858f;
   font-size: 16px;
 }
 @media (min-width: 900px) {
@@ -2651,6 +2603,9 @@ html, body {
   }
 }
 
+/***********
+ * IMAGE
+ ***********/
 .image--wide {
   position: relative;
 }
