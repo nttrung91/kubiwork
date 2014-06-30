@@ -1842,7 +1842,7 @@ html, body {
 .center {
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -2432,6 +2432,12 @@ html, body {
 .project-wrap .project__caption {
   text-align: center;
   width: 100%;
+  top: 40%;
+}
+@media (min-width: 1275px) {
+  .project-wrap .project__caption {
+    top: 35%;
+  }
 }
 .project-wrap .project__caption > span:nth-child(1) {
   display: block;
@@ -2471,6 +2477,22 @@ html, body {
   .project-wrap .project__caption > span:nth-child(2) {
     font-size: 30px;
   }
+}
+.project-wrap .project__scrolldown-sign {
+  display: none;
+  top: 70%;
+}
+@media (min-width: 1275px) {
+  .project-wrap .project__scrolldown-sign {
+    display: block;
+  }
+}
+.project-wrap .project__scrolldown-sign > span {
+  display: block;
+  color: #81858f;
+  text-transform: uppercase;
+  margin-top: 14px;
+  font-size: 13px;
 }
 .project-wrap .project__skills {
   position: absolute;
@@ -2532,11 +2554,11 @@ html, body {
   }
 }
 .project-wrap .project__content {
-  padding: 0 20px 40px;
+  padding: 0 25px 40px;
 }
 @media (min-width: 660px) {
   .project-wrap .project__content {
-    padding: 0 30px 40px;
+    padding: 0 60px 40px;
   }
 }
 .project-wrap .project__content section {
@@ -2570,7 +2592,7 @@ html, body {
 }
 @media (min-width: 1275px) {
   .text-content {
-    width: 900px;
+    width: 750px;
   }
 }
 .text-content h2 {
@@ -2618,4 +2640,55 @@ html, body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.kb-circle-wrap {
+  padding: 15px;
+  border: 2px solid #81858f;
+  border-radius: 30px;
+  width: 8px;
+  margin: 0 auto;
+}
+.kb-circle-wrap span {
+  margin: 10px 0;
+  display: block;
+}
+.kb-circle-wrap span:first-child {
+  margin-top: 0;
+}
+.kb-circle-wrap span:last-child {
+  margin-bottom: 0;
+}
+
+.kb-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #81858f;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+.kb-circle-1 {
+  animation-delay: 100ms;
+}
+
+.kb-circle-2 {
+  animation-delay: 300ms;
+}
+
+.kb-circle-3 {
+  animation-delay: 500ms;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,56 @@
+.kb-circle-wrap {
+  padding: 15px;
+  border: 2px solid $grey;
+  border-radius: 30px;
+  width: 8px;
+  margin: 0 auto;
+
+  span {
+    margin: 10px 0;
+    display: block;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.kb-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: $grey;
+
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+
+
+.kb-circle-1 {
+  animation-delay: 100ms;
+}
+
+.kb-circle-2 {
+  animation-delay: 300ms;
+}
+
+.kb-circle-3 {
+  animation-delay: 500ms;
+}
+
+
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+
