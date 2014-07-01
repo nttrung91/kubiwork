@@ -2692,3 +2692,7 @@ html, body {
     opacity: 1;
   }
 }
+
+#js-dynamic-section {
+  height: 100%;
+}

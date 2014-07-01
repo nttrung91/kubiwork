@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Home – Kubiwork – HTML5, CSS, OOCSS, front-end developer and mobile strategist</title>
+      <title>Home – Kubiwork – HTML5, CSS, OOCSS, front-end developer and mobile strategist</title>
 
-        <meta name="description" content="Portfolio site for Kubi">
+      <meta name="description" content="Portfolio site for Kubi">
 
 
-        <link rel="stylesheet" href="../css/build/minified/global.css">
-    </head>
+      <link rel="stylesheet" href="../css/build/minified/global.css">
+  </head>
 
-    <body>
+  <body>
 
-      <div class="site-wrap">
+    <div class="site-wrap">
 
-        <header class="site-header">
+      <header class="site-header">
 
-          <div class="nav-bar">
+        <div class="nav-bar">
 
-            <a href="#menu" class="menu-link">
-              <div class="hamburger-box">
-                <span class="hamburger-bun hamburger-bun--top"></span>
-                <span class="hamburger-patty"></span>
-                <span class="hamburger-bun hamburger-bun--btm"></span>
-              </div>
-            </a>
+          <a href="#menu" class="menu-link">
+            <div class="hamburger-box">
+              <span class="hamburger-bun hamburger-bun--top"></span>
+              <span class="hamburger-patty"></span>
+              <span class="hamburger-bun hamburger-bun--btm"></span>
+            </div>
+          </a>
 
-            <a href="../index.html" class="kubi-badge kubi-badge--default">
-              <span>K</span>
-            </a>
+          <a href="../index.html" class="kubi-badge kubi-badge--default">
+            <span>K</span>
+          </a>
 
             <!-- <ul class="social-icons">
               <li><a href="#">Facebook</a></li>
@@ -76,46 +76,43 @@
 
         </header>
 
-        <section class="project-wrap">
+        <div id="js-dynamic-section">
 
-          <figure class="image--wide image--cover curtain curtain--skin-1 project__main-image kb-project-pressa ">
+          <section class="project-wrap" id="subpage">
 
-            <figcaption class="project__caption center">
+            <figure class="image--wide image--cover curtain curtain--skin-1 project__main-image kb-project-pressa ">
 
-              <span class="text--block text--important-skin-1">
-                Pressa
-              </span>
+              <figcaption class="project__caption center">
+                <span class="text--block text--important-skin-1">
+                  Pressa
+                </span>
+                <span class="text--paragraph-skin-1">
+                  A web application designed for autistic kids
+                </span>
+              </figcaption>
 
-              <span class="text--paragraph-skin-1">
-                A web application designed for autistic kids
-              </span>
-
-            </figcaption>
-
-            <div class="project__scrolldown-sign center">
-              <div class="kb-circle-wrap">
-                <span class="kb-circle kb-circle-1"></span>
-                <span class="kb-circle kb-circle-2"></span>
-                <span class="kb-circle kb-circle-3"></span>
+              <div class="project__scrolldown-sign center">
+                <div class="kb-circle-wrap">
+                  <span class="kb-circle kb-circle-1"></span>
+                  <span class="kb-circle kb-circle-2"></span>
+                  <span class="kb-circle kb-circle-3"></span>
+                </div>
+                <span>Scroll down</span>
               </div>
 
-              <span>Scroll down</span>
-            </div>
+              <ul class="nav project__skills">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Javascript</li>
+                <li>jQuery</li>
+              </ul>
 
+            </figure>
 
-            <ul class="nav project__skills">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Javascript</li>
-              <li>jQuery</li>
-            </ul>
+            <section class="project__content" id="1">
 
-          </figure>
-
-          <section class="project__content" id="1">
-
-            <section class="text-content">
-              <h2>Pressa</h2>
+              <section class="text-content">
+                <h2>Pressa</h2>
 
               <!-- <p>
                 Pressa is a simple and easy to use web application that helps autistic kids communicate with other people. The app provides a collection of common words and uses a text to speech API to read those words aloud. Kids who want to express their inner voice can use the app by pressing on words to form a meaningful phrase and by pressing the Speak Button, the app will speak the phrase aloud.
@@ -124,7 +121,6 @@
               <p>
                 Pressa is a simple and easy to use web app that enables autistic children express themselves. Using a collection of common words, minimalistic icons, and a text to speech API, Pressa brings out an autistic child’s Inner Voice. Simply press on a combination of word tiles to form a phrase, then press the Speaker Icon for Pressa to read the phrase aloud. This app was created in less than two weeks for the 2014 Autism Appjam competition at UCI.
               </p>
-
             </section>
 
             <section class="image--wide">
@@ -135,23 +131,26 @@
               <h2>
                 Strategy
               </h2>
-
               <p>
                 Pressa is a web application that helps autistic kids to communicate with other people around them. The app was built by a group of five UC Irvine students. It was built within 7 days during an Autism Appjam Competition.
               </p>
-
               <p>
                 During the built process, I was in charge of planning, building, and providing direction to what to do next.
               </p>
             </section>
 
           </section>
+
         </section>
 
       </div>
 
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script src="../js/build/production.min.js"></script>
 
-    </body>
+
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../js/build/production.min.js"></script>
+
+  </body>
 </html>
