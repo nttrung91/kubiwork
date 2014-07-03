@@ -114,10 +114,29 @@
  */
 
 .kb-project-pressa {
-  background-image: url("/images/p1.jpg");
+  background-image: url("/site/images/home-pattern.png"), url("/site/images/p1.jpg");
 }
 
 .kb-project-mrmarvelous {
-  background-image: url("/images/p2.jpg");
+  background-image: url("/site/images/p2.jpg");
 }
 
+.kb-project-mrmarvelous-2 {
+  background-image: url("/site/images/home-pattern.png"), url("/site/images/marvelous.jpg");
+}
+
+.kb-project-blue {
+  background: $blue;
+}
+
+.kb-project-red {
+  background: $darkOrange;
+}
+
+.kb-project-green {
+  background: $green;
+}
+
+.kb-project-yellow {
+  background: $yellow;
+}

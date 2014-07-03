@@ -18,3 +18,9 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+.image--cover-pattern {
+  background-repeat: repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: auto, cover;
+}

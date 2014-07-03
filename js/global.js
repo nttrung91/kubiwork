@@ -56,7 +56,7 @@ if (Modernizr.history) {
   // history is supported; do magical things
 
   // hijack the nav click event
-  $("#page,.nav-bar,.nav-menu").on("click","a", function() {
+  $("#js-dynamic-section,.nav-bar,.nav-menu,.project__controller").on("click","a", function() {
 
     _href = $(this).attr("href");
 
@@ -97,13 +97,16 @@ function loadContent(href) {
       $dynamicSection
         .hide()
           .load(href + " #subpage", function() { // load the contents of whatever href is
-            $dynamicSection.fadeIn(0);
+            $dynamicSection.show();
           });
         });
   }
 
-
-
+// Enable going back to prev page
+$(window).bind("popstate", function() {
+    link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
+    loadContent(link);
+});
 
 /*
  * Change color of nav bar when scroll down pass a certain point

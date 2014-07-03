@@ -2,9 +2,17 @@
  * SITE-WRAP
  *****/
 
+/*
+ * 1. Fix the bug in Iphone < 4 where there is a big gap on the right
+ */
+
  .site-wrap {
+  width: 100%; /* [1] */
+  overflow: hidden; /* [1] */
+
   @include bp(mama-bear) {
     height: 100%;
+    overflow: auto;
   }
  }
 

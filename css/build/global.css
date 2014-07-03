@@ -56,6 +56,47 @@
  * UI Variables
  * ===========================
  */
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@font-face {
+  font-family: 'kubiwork';
+  src: url("../../libs/fonts/icomoon.eot?59dp9f");
+  src: url("../../libs/fonts/icomoon.eot?#iefix59dp9f") format("embedded-opentype"), url("../../libs/fonts/icomoon.woff?59dp9f") format("woff"), url("../../libs/fonts/icomoon.ttf?59dp9f") format("truetype"), url("../../libs/fonts/icomoon.svg?59dp9f#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'kubiwork';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Kubiwork =========== */
+  color: #f0f1f5;
+  font-size: 17px;
+}
+
+.icon-menu:before {
+  content: "\e600";
+}
+
+.icon-prev:before {
+  content: "\e601";
+}
+
+.icon-next:before {
+  content: "\e602";
+}
+
+.icon-share-link:before {
+  content: "\e603";
+}
+
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -74,7 +115,6 @@
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
 article,
 aside,
 details,
@@ -1429,7 +1469,7 @@ button {
 
 .curtain--skin-1:before {
   background: #111;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 /* ==========================================================================
@@ -1801,9 +1841,19 @@ html, body {
 /*****
  * SITE-WRAP
  *****/
+/*
+ * 1. Fix the bug in Iphone < 4 where there is a big gap on the right
+ */
+.site-wrap {
+  width: 100%;
+  /* [1] */
+  overflow: hidden;
+  /* [1] */
+}
 @media (min-width: 1275px) {
   .site-wrap {
     height: 100%;
+    overflow: auto;
   }
 }
 
@@ -1959,7 +2009,6 @@ html, body {
   height: 3px;
   background: #f0f1f5;
   margin: 0 auto 3px;
-  transition: all 230ms ease-in;
   transform: translate3d(0, 0, 0);
 }
 @media (min-width: 900px) {
@@ -2390,11 +2439,31 @@ html, body {
  * List of project images
  */
 .kb-project-pressa {
-  background-image: url("/images/p1.jpg");
+  background-image: url("/site/images/home-pattern.png"), url("/site/images/p1.jpg");
 }
 
 .kb-project-mrmarvelous {
-  background-image: url("/images/p2.jpg");
+  background-image: url("/site/images/p2.jpg");
+}
+
+.kb-project-mrmarvelous-2 {
+  background-image: url("/site/images/home-pattern.png"), url("/site/images/marvelous.jpg");
+}
+
+.kb-project-blue {
+  background: #6fb7f3;
+}
+
+.kb-project-red {
+  background: #ff4e45;
+}
+
+.kb-project-green {
+  background: #6df465;
+}
+
+.kb-project-yellow {
+  background: #d8b45a;
 }
 
 /**********
@@ -2433,6 +2502,11 @@ html, body {
   text-align: center;
   width: 100%;
   top: 40%;
+}
+@media (min-width: 660px) {
+  .project-wrap .project__caption {
+    top: 33%;
+  }
 }
 @media (min-width: 1275px) {
   .project-wrap .project__caption {
@@ -2480,19 +2554,31 @@ html, body {
 }
 .project-wrap .project__scrolldown-sign {
   display: none;
-  top: 70%;
+}
+@media (min-width: 660px) {
+  .project-wrap .project__scrolldown-sign {
+    opacity: 0.6;
+    display: block;
+    top: 67%;
+  }
 }
 @media (min-width: 1275px) {
   .project-wrap .project__scrolldown-sign {
-    display: block;
+    top: 70%;
   }
 }
 .project-wrap .project__scrolldown-sign > span {
   display: block;
   color: #81858f;
   text-transform: uppercase;
-  margin-top: 14px;
-  font-size: 13px;
+  margin-top: 10px;
+  font-size: 11px;
+}
+@media (min-width: 1275px) {
+  .project-wrap .project__scrolldown-sign > span {
+    margin-top: 14px;
+    font-size: 13px;
+  }
 }
 .project-wrap .project__skills {
   position: absolute;
@@ -2642,16 +2728,34 @@ html, body {
   background-repeat: no-repeat;
 }
 
+.image--cover-pattern {
+  background-repeat: repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: auto, cover;
+}
+
 .kb-circle-wrap {
-  padding: 15px;
-  border: 2px solid #81858f;
+  padding: 12px;
+  border: 1px solid #81858f;
   border-radius: 30px;
-  width: 8px;
+  width: 5px;
   margin: 0 auto;
 }
+@media (min-width: 1275px) {
+  .kb-circle-wrap {
+    padding: 15px;
+    border: 2px solid #81858f;
+    width: 8px;
+  }
+}
 .kb-circle-wrap span {
-  margin: 10px 0;
+  margin: 8px 0;
   display: block;
+}
+@media (min-width: 1275px) {
+  .kb-circle-wrap span {
+    margin: 10px 0;
+  }
 }
 .kb-circle-wrap span:first-child {
   margin-top: 0;
@@ -2661,14 +2765,20 @@ html, body {
 }
 
 .kb-circle {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   border-radius: 100%;
   background: #81858f;
   animation-name: fade;
   animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
+}
+@media (min-width: 1275px) {
+  .kb-circle {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .kb-circle-1 {
@@ -2691,6 +2801,59 @@ html, body {
   100% {
     opacity: 1;
   }
+}
+
+.view-site {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #6fb7f3;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 20;
+  transition: bottom 300ms ease-out;
+}
+.view-site:hover {
+  bottom: 50px;
+}
+.view-site:hover > span {
+  opacity: 1;
+}
+.view-site > span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.project__controller {
+  background: #6fb7f3;
+  height: 55px;
+  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+  opacity: 0.94;
+}
+.project__controller > ul {
+  text-align: center;
+}
+.project__controller > ul li {
+  margin: 0;
+}
+.project__controller > ul a {
+  display: block;
+  height: 55px;
+  position: relative;
+  width: 55px;
 }
 
 #js-dynamic-section {

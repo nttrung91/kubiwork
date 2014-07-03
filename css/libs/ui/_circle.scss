@@ -1,13 +1,23 @@
 .kb-circle-wrap {
-  padding: 15px;
-  border: 2px solid $grey;
+  padding: 12px;
+  border: 1px solid $scrolldown-color;
   border-radius: 30px;
-  width: 8px;
+  width: 5px;
   margin: 0 auto;
 
+  @include bp(mama-bear) {
+  padding: 15px;
+  border: 2px solid $scrolldown-color;
+  width: 8px;
+  }
+
   span {
-    margin: 10px 0;
+    margin: 8px 0;
     display: block;
+
+    @include bp(mama-bear) {
+      margin: 10px 0;
+    }
 
     &:first-child {
       margin-top: 0;
@@ -20,15 +30,20 @@
 }
 
 .kb-circle {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   border-radius: 100%;
-  background: $grey;
+  background: $scrolldown-color;
 
   animation-name: fade;
   animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
+
+  @include bp(mama-bear) {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 

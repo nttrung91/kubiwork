@@ -34,9 +34,14 @@
     width: 100%;
     top: 40%;
 
-    @include bp(mama-bear){
+    @include bp(baby-bear) {
+      top: 33%;
+    }
+
+    @include bp(mama-bear) {
       top: 35%;
     }
+
 
     // Project Name
     > span:nth-child(1) {
@@ -80,18 +85,28 @@
 
   .project__scrolldown-sign {
     display: none;
-    top: 70%;
+
+    @include bp(baby-bear) {
+      opacity: 0.6;
+      display: block;
+      top: 67%;
+    }
 
     @include bp(mama-bear) {
-      display: block;
+      top: 70%;
     }
 
     > span {
       display: block;
-      color: $grey;
+      color: $scrolldown-color;
       text-transform: uppercase;
-      margin-top: 14px;
-      font-size: 13px;
+      margin-top: 10px;
+      font-size: 11px;
+
+      @include bp(mama-bear) {
+        margin-top: 14px;
+        font-size: 13px;
+      }
     }
   }
 

@@ -1,0 +1,26 @@
+.project__controller {
+  background: $blue;
+  height: 55px;
+  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+  opacity: 0.94;
+
+  > ul {
+    text-align: center;
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      display: block;
+      height: 55px;
+      position: relative;
+      width: 55px;
+    }
+  }
+}
+
