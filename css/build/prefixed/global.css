@@ -2676,10 +2676,12 @@ body {
   top: 55px;
   /* [1] */
   background: #111;
+  padding-bottom: 55px;
 }
 
 @media (min-width: 900px) {
   .projects {
+    padding-bottom: 0;
     top: 0;
     padding-left: 80px;
   }
@@ -2805,15 +2807,15 @@ body {
  */
 
 .kb-project-pressa {
-  background-image: url("/site/images/home-pattern.png"), url("/site/images/p1.jpg");
+  background-image: url("/images/home-pattern.png"), url("/images/p1.jpg");
 }
 
 .kb-project-mrmarvelous {
-  background-image: url("/site/images/p2.jpg");
+  background-image: url("/images/p2.jpg");
 }
 
 .kb-project-mrmarvelous-2 {
-  background-image: url("/site/images/home-pattern.png"), url("/site/images/marvelous.jpg");
+  background-image: url("/images/home-pattern.png"), url("/images/marvelous.jpg");
 }
 
 .kb-project-blue {
